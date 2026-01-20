@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/scripts.js"></script>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+	<script src="https://unpkg.com/scrollama"></script>
+    <script src="./js/scrollamaInit.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Silecios Digitales</title>
+
+</head>
+<body>
+
+    <section id="scrolly">
+        <article>
+
+            <div class="w-full h-screen mx-auto flex flex-col items-center justify-center p-5 relative bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step" data-step="1">
+
+                <div class="w-max h-max">
+                    <img src="./static/img/logo/logo_datagenero.png" alt="Logo" class="w-64 h-auto">
+                </div>
+        
+                <div class="w-[489.5px] h-[195.5px] bg-[url(./static/img/Silenciosdigitales.gif)] bg-cover bg-no-repeat bg-center">
+        
+                </div>
+        
+                <!-- <div class="absolute top-0 left-0 bg-cover bg-no-repeat bg-center w-screen h-screen transition-all linear " id="zip-animation-container">
+                    
+                </div> -->
+        
+                <div>
+                    <p class="font-montserrat font-bold text-[30px] mt-[20px] text-center text-[#343434]">Mapeando la violencia digital <br>de género en Argentina</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-5 flex-start w-[50%] mx-auto step" data-step="2">
+                <h2 class="text-[#FF0B53] font-bold text-[30px] text-left">¿Qué es la violencia digital de género?</h2>
+        
+                <p class="text-[18px] text-left"><span class="font-bold">Silencios Digitales</span> es el primer revelamiento nacional<br>
+                    sobre violencia digital de género en Argentina.</p>
+        
+                <p class="text-[18px] text-left">Cada vez se habla más de este tipo de violencia.<br>
+                    Pero la pregunta sigue siendo clave:<br>
+                    <span class="font-bold">¿sabemos realmente de qué estamos hablando?</span>
+                </p>
+        
+                <p class="text-[18px] text-left text-[#343434]">
+                    En un contexto de creciente digitalización de la vida cotidiana, las violencias <br>
+                    que históricamente han afectado a mujeres y personas LGBTI+ no desaparecen: <br>
+                    <span class="underline">se transforman y se amplifican a través de las tecnologías digitales.</span>
+                </p>
+        
+                <p class="text-[18px] text-left text-[#343434]">
+                    <span class="text-[#FF0B53]">  El hostigamiento constante, la vigilancia, la suplantación de identidad, la <br>
+                            difusión no consentida de imágenes íntimas, los discursos de odio y los ataques <br>
+                            coordinados 
+                    </span> en redes son algunas de sus expresiones más frecuentes.
+                </p>
+        
+                <p class="text-[18px] text-left text-[#343434]">
+                    Se trata de una <span class="font-bold">problemática urgente, con consecuencias reales</span> sobre la vida, <br>
+                    la salud y la participación social de quienes la sufren. <br>
+                    Sin embargo, hasta ahora, ha contado con pocos datos sistemáticos y <br>
+                    respuestas institucionales insuficientes.
+                </p>
+        
+                <p class="text-[18px] text-left text-[#343434]">
+                    La violencia digital de género puede definirse como <br>
+                    <span class="text-[#0E1AFB] font-bold">
+                        cualquier conducta dirigida contra mujeres, niñas y otras personas en razón <br>
+                        de su orientación sexual, identidad o expresión de género, que cause daño y <br>
+                        que sea cometida, facilitada o amplificada mediante el uso de tecnologías <br>
+                        de la información y la comunicación (TIC).
+                    </span>
+                </p>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="flex flex-col gap-5 flex-start w-[50%] mx-auto mt-10">
+                    <p class="text-[18px] text-left text-[#343434]">
+                        Para comprender cómo se manifiesta —y cómo se reconoce— <br>
+                        la violencia digital de género, en <span class="font-bold">Silencios Digitales</span> hicimos <br>
+                        dos preguntas distintas.
+                    </p>
+            
+                    <p class="text-[18px] text-left text-[#343434]">
+                        Por un lado, una pregunta directa: si la persona consideraba <br>
+                        haber vivido una situación de violencia digital de género
+                    </p>
+            
+                    <p class="text-[18px] text-left text-[#343434]">
+                        Por otro, una pregunta basada en hechos concretos: si había <br>
+                        experimentado, en los últimos 24 meses, 18 situaciones <br>
+                        específicas que la literatura y los marcos normativos <br>
+                        reconocen como violencia digital de género.
+                    </p>
+                </div>
+
+                <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                    <div class="relative">
+                        <div id="img-container-2" class="grid  grid-cols-10 grid-rows-10 gap-2">
+            
+                        </div>
+                        <div class="absolute top-[5px] left-[300px]">
+                            <p class="text-[#FF0B53] text-[25px]">
+                                Solo <span class="text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">23%</span> <br>
+                                contestó que <br>
+                                <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                sí ha vivido <br>
+                                violencia
+                                </span> de <br>
+                                género en <br>
+                                entornos digitales
+                            </p>
+                        </div>
+            
+                        <div class="absolute top-[230px] left-[470px]">
+                            <p class="text-[#0E1AFB] text-[25px]">
+                                <span class="text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#00F0E9]">14%</span> manifestó no <span class="font-bold">estar <br>
+                                segura o seguro de haber <br>
+                                vivido</span> este tipo de <br>
+                                violencia.
+                            </p>
+                        </div>
+                            
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-bold text-[25px] text-center mt-10 mb-10">Sin embargo, cuando se indagó a <br>
+                        partir de situaciones concretas</p>
+                </div>
+
+                <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                    <div class="relative">
+                        <div id="img-container-1" class="grid  grid-cols-10 grid-rows-10 gap-2">
+            
+                        </div>
+                        <div class="absolute top-[260px] left-[290px]">
+                            <p class="text-[#FF0B53] text-[25px]">
+                                El <span class="text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">40%</span> de las personas <br>
+                                <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                    señaló haber atravesado al <br>
+                                    menos una situación de <br>
+                                    violencia digital de género <br>
+                                </span>
+                                en los últimos dos años</p>
+                        </div>
+                            
+                    </div>
+                </div>
+
+                <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                    <p class="text-[25px] text-[#343434] border-l-[9px] border-[#FF0B53]">
+                        Estos datos revelan algo central:<br> 
+                        <span class="font-bold">
+                        la violencia digital de género <br>
+                        muchas veces se vive, pero no <br>
+                        siempre se nombra ni se <br>
+                        reconoce como tal.
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="step" data-step="4">
+                <div class="flex flex-col gap-5 flex-start w-[50%] mx-auto mt-10">
+                    <p class="text-[18px] text-left text-[#343434]">
+                        <span class="text-[#0E1AFB]">Internet atraviesa nuestra vida cotidiana.</span> <br>
+                        Los datos de Silencios Digitales muestran una alta exposición <br>
+                        diaria a entornos digitales. 
+                    </p>
+            
+                    <p class="text-[25px] text-[#FF0B53]">Un <span class="text-[40px] font-extrabold">35%</span> utiliza internet más de <span class="font-bold">6 horas por día</span></p>
+            
+                    <p class="text-[25px] text-[#0E1AFB]">Un <span class="text-[40px] font-extrabold">35%</span> pasa <span class="font-bold">entre 4 y 6 horas diarias</span> en plataformas digitales</p>
+            
+                    <p class="text-[18px] text-left text-[#343434]">
+                        Trabajamos, nos informamos, militamos, construimos vínculos, <br>
+                        opinamos y participamos en la vida pública a través de redes y plataformas.
+                    </p>
+                </div>
+
+                <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                    <p class="text-[25px] text-[#343434] border-l-[9px] border-[#FF0B53]">
+                        La pregunta es inevitable: <br> 
+                        <span class="font-bold">
+                        ¿es un espacio seguro? <br>
+                        ¿cómo lo habitamos?
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="step" data-step="5">
+
+                <div class="w-[50%] mx-auto">
+                    <p class="text-[18px] text-left text-[#343434]">
+                        Los datos muestran que <span class="text-[#0E1AFB] font-bold">la autocensura se convirtió en una <br>
+                        estrategia extendida de supervivencia digital.</span> <br> 
+                    </p>
+                </div>
+
+                <div class="w-full h-full mx-auto flex flex-col gap-5 items-center justify-center bg-white p-5">            
+                    <div class="relative">
+                        <div id="img-container-3" class="grid  grid-cols-10 grid-rows-10 gap-2">
+            
+                        </div>
+                        <div class="absolute top-[70px] left-[90px]">
+                            <p class="text-[#FF0B53] text-[23px]">
+                                El <span class="text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">76%</span> de las <br>
+                                personas <br>
+                                <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                declara no sentirse <br>
+                                libre de publicar
+                                </span> lo que <br>
+                                quiere en redes sociales
+                            </p>
+                        </div>
+                            
+                    </div>
+            
+                    <p class="text-[18px] text-left text-[#343434] mt-10">
+                        Entre los principales motivos para limitar lo que se publica se repiten patrones claros:
+                    </p>
+            
+                    <div class="flex justify-between w-[50%]">
+                        <div class="w-max h-max">
+                            <img src="./static/img/elements/1.png" alt="Logo" class="w-[295px] h-[340px]">
+                        </div>
+            
+                        <div class="w-max h-max">
+                            <img src="./static/img/elements/2.png" alt="Logo" class="w-[292px] h-[353px]">
+                        </div>
+            
+                        <div class="w-max h-max">
+                            <img src="./static/img/elements/3.png" alt="Logo" class="w-[315px] h-[338px]">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="step" data-step="6">
+                <div class="flex flex-col gap-5 flex-start w-[50%] mx-auto mt-10">
+                    <p class="text-[18px] text-left text-[#343434]">
+                        La violencia digital de género no es abstracta ni simbólica. <br>
+                        Tiene impactos concretos y profundos en la vida de las personas.
+                    </p>
+            
+                    <div class="flex gap-2 items-center">
+                        <img src="./static/img/elements/hombrepanic.png" alt="Logo" class="w-max h-[340px]">
+            
+                        <p class="text-[18px] text-left text-[#343434]">
+                            En el plano emocional y subjetivo, quienes la vivieron relatan <br>
+                            miedo, asco, angustia, bronca y malestar persistente.
+                        </p>
+                    </div>
+            
+                    <div class="flex gap-2 items-center">
+                        <img src="./static/img/elements/mujerestrés.png" alt="Logo" class="w-max h-[340px]">
+            
+                        <p class="text-[18px] text-left text-[#343434]">
+                            En la salud mental, aparecen consecuencias que requieren <br>
+                            atención profesional: ansiedad, ataques de pánico, depresión, <br>
+                            aislamiento, dificultades para dormir y, en algunos casos, temor <br>
+                            incluso a salir de la propia casa.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                    <p class="text-[25px] text-[#343434] border-l-[9px] border-[#FF0B53]">
+                        <span class="font-bold">
+                            Estos efectos se trasladan también a las prácticas <br>
+                            digitales.</span>  Muchas personas abandonan redes, restringen <br>
+                            su presencia en línea o reducen drásticamente su <br>
+                            participación pública como forma de autoprotección.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="step" data-step="7">
+
+                <div class="flex flex-col gap-5 flex-start w-[50%] mx-auto mt-10">
+                    <p class="text-[18px] text-left text-[#0E1AFB]">
+                        La violencia digital trasciende las pantallas.
+                    </p>
+            
+                    <div class="flex gap-2 items-center">
+            
+                        <p class="text-[18px] text-left text-[#343434]">
+                            Aparecen sentimientos de vulnerabilidad e inseguridad <br>
+                            vinculados al miedo de que las agresiones se extiendan al <br>
+                            plano físico y presencial.
+                        </p>
+            
+                        <img src="./static/img/elements/persona_compu.png" alt="Logo" class="w-max h-[350px]">
+                    </div>
+            
+                    <div class="flex gap-2 items-center mt-10">
+                        <p class="text-[18px] text-left text-[#343434]">
+                            Los efectos alcanzan también la vida social, laboral y material. <br>
+                            En varios relatos surge el temor a encontrarse con los <br>
+                            agresores en el espacio público, a ser perseguidas o vigiladas <br>
+                            fuera de internet. Estas situaciones se intensifican cuando <br>
+                            existe cercanía o conocimiento previo de quienes ejercieron las <br>
+                            agresiones.
+                        </p>
+            
+                        <img src="./static/img/elements/persona_celu.png" alt="Logo" class="w-max h-[200px]">
+            
+                    </div>
+            
+                </div>
+
+                <div class="step" data-step="8">
+
+                    <div class="mx-auto w-[50%]">
+                        <p class="text-[18px] text-left text-[#343434]">
+                            Los datos muestran un patrón consistente: hoy, la mayoría de las personas no <br>
+                            cuenta con los conocimientos, herramientas ni apoyos institucionales <br>
+                            necesarios para prevenir o responder a la violencia de género digital. <br>
+                            Este déficit aparece tanto a nivel individual como en la posibilidad de activar <br>
+                            una denuncia efectiva.
+                        </p>
+                    </div>
+                    <div class="w-full h-full mx-auto flex flex-col gap-5 items-center justify-center bg-white p-5">                
+                        <div class="relative">
+                            <div id="img-container-4" class="grid  grid-cols-10 grid-rows-10 gap-2">
+                
+                            </div>
+                            <div class="absolute top-[170px] left-[0px]">
+                                <p class="text-[#FF0B53] text-[23px]">
+                                    Un <span class="text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">66%</span> afirma <br>
+                                    <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                    no saber cómo <br>
+                                    denunciar o no estar <br>
+                                    segura/o sobre cuáles<br>
+                                    son los canales 
+                                    </span> <br>
+                                    disponibles para <br>
+                                    reportar estas <br>
+                                    situaciones
+                                </p>
+                            </div>
+                                
+                        </div>
+
+                        <div class="relative mt-20">
+                            <div id="img-container-5" class="grid  grid-cols-10 grid-rows-10 gap-2">
+                
+                            </div>
+                            <div class="absolute top-[80px] left-[280px]">
+                                <p class="text-[#FF0B53] text-[23px]">
+                                    Un <span class="text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">62%</span>
+                                    <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                    no realizó <br>
+                                    ninguna formación o <br>
+                                    capacitación
+                                    </span> en seguridad <br>
+                                    digital en los últimos cinco años
+                                </p>
+                            </div>
+                                
+                        </div>
+
+                        <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5">
+                            <p class="text-[25px] text-[#343434] border-l-[9px] border-[#FF0B53]">
+                                El resultado es un escenario preocupante: <br>
+                                <span class="font-bold">
+                                    alta exposición cotidiana en entornos <br>
+                                    digitales y muy pocas herramientas de <br>
+                                    autoprotección disponibles o conocidas.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </section>
+
+
+    
+   
+
+    <!-- <div class="w-full h-full mx-auto flex flex-col gap-5 items-center justify-center bg-white p-5 mt-10">
+
+        <div class="relative">
+            <div id="img-container-5" class="grid  grid-cols-10 grid-rows-10 gap-2">
+
+            </div>
+            <div class="absolute top-[80px] left-[280px]">
+                <p class="text-[#FF0B53] text-[23px]">
+                    Un <span class="text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">62%</span>
+                    <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                    no realizó <br>
+                    ninguna formación o <br>
+                    capacitación
+                    </span> en seguridad <br>
+                    digital en los últimos cinco años
+                </p>
+            </div>
+                
+        </div>
+    </div> -->
+
+</body>
+
+<script>
+    
+    peopleAnimation({
+        containerId: "img-container-1",
+        ratio: 0.4,
+        whiteRegions: [
+        { row: 3, col: 3, rows: 3, cols: 4 },
+        ]
+    });
+
+    peopleAnimation({
+        containerId: "img-container-2",
+        ratio: 0.23,
+        whiteRegions: [
+        { row: 0, col: 3, rows: 3, cols: 3 },
+        { row: 3, col: 5, rows: 2, cols: 4}
+        ],
+        blueRatio: 0.14
+    });
+
+    peopleAnimation({
+        containerId: "img-container-3",
+        imgPath: "./static/img/people",
+        imgPrefix: "grey_P",
+        ratio: 0.76,
+        whiteRegions: [
+        { row: 1, col: 1, rows: 2, cols: 3 },
+        ],
+        blueRatio: 0,
+        greyAnimation: true
+    });
+
+    peopleAnimation({
+        containerId: "img-container-4",
+        imgPath: "./static/img/",
+        imgPrefix: "P",
+        ratio: 0.66,
+        whiteRegions: [
+        { row: 2, col: 0, rows: 4, cols: 3 },
+        ],
+        blueRatio: 0,
+    });
+
+    peopleAnimation({
+        containerId: "img-container-5",
+        imgPath: "./static/img/",
+        imgPrefix: "P",
+        ratio: 0.62,
+        whiteRegions: [
+        { row: 1, col: 3, rows: 1, cols: 3 },
+        { row: 2, col: 3, rows: 1, cols: 4 },
+
+        ],
+        blueRatio: 0,
+    });
+
+</script>
+
+<!-- <script>
+  const container = document.getElementById("zip-animation-container");
+
+  const frames = [
+    "static/img/Inicio 1.svg",
+    "static/img/Inicio 2.svg",
+    "static/img/Inicio 3.svg",
+    "static/img/Inicio 4.svg",
+    "static/img/Inicio 5.svg",
+    "static/img/Inicio 6.svg",
+  ];
+
+  let index = 0;
+  const frameDuration = 150; // ms entre imágenes
+
+  const animation = setInterval(() => {
+    container.style.backgroundImage = `url('${frames[index]}`;
+    index++;
+
+    if (index >= frames.length) {
+      clearInterval(animation);
+
+      setTimeout(() => {
+        container.style.display = "none";
+
+      }, 500);
+    }
+  }, frameDuration);
+</script> -->
+
+<script>
+    // using d3 for convenience
+var main = d3.select("main");
+var scrolly = main.select("#scrolly");
+var figure = scrolly.select("figure");
+var article = scrolly.select("article");
+var step = article.selectAll(".step");
+
+// initialize the scrollama
+var scroller = scrollama();
+
+// generic window resize listener event
+function handleResize() {
+    // 1. update height of step elements
+    var stepH = Math.floor(window.innerHeight * 0.75);
+    step.style("height", stepH + "px");
+
+    var figureHeight = window.innerHeight / 2;
+    var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+
+    figure
+        .style("height", figureHeight + "px")
+        .style("top", figureMarginTop + "px");
+
+    // 3. tell scrollama to update new element dimensions
+    scroller.resize();
+}
+
+// scrollama event handlers
+function handleStepEnter(response) {
+    console.log(response);
+    // response = { element, direction, index }
+
+    // add color to current step only
+    step.classed("is-active", function (d, i) {
+        return i === response.index;
+    });
+
+    // update graphic based on step
+    figure.select("p").text(response.index + 1);
+}
+
+
+function init() {
+
+    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+    handleResize();
+
+    // 2. setup the scroller passing options
+    // 		this will also initialize trigger observations
+    // 3. bind scrollama event handlers (this can be chained like below)
+    scroller
+        .setup({
+            step: "#scrolly article .step",
+            offset: 0.33,
+            debug: false
+        })
+        .onStepEnter(handleStepEnter);
+}
+
+// kick things off
+init();
+</script>
+
+<style type="text/tailwindcss">
+    @theme {
+      /* Extending the default sans font with 'Roboto' at the beginning of the stack */
+      --font-sans: 'Montserrat', sans-serif; 
+      /* Or add a new custom utility, e.g., 'font-display' */
+      --font-display: 'Montserrat', sans-serif;
+    }
+</style>
+  
+
+</html
