@@ -1,7 +1,5 @@
 function peopleAnimation({
   containerId,
-  rows = 10,
-  cols = 10,
   ratio = 0.5,
   yellowClass = "bg-[#F6F4F1]",
   whiteClass = "bg-white",
@@ -18,11 +16,34 @@ function peopleAnimation({
 
   container.innerHTML = "";
 
-  const totalCells = rows * cols;
 
   const whiteCells = new Set();
 
-  whiteRegions.forEach(({ row, col, rows: r, cols: c }) => {
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+  const activeWhiteRegions = isDesktop
+    ? whiteRegions.desktop
+    : whiteRegions.mobile;
+
+  const gridConfig = isDesktop
+    ? { rows: 10, cols: 10 }
+    : { rows: 20, cols: 5 };
+  
+  const rows = gridConfig.rows;
+  const cols = gridConfig.cols;
+
+  const totalCells = rows * cols;
+
+    
+  //   activeWhiteRegions.forEach(({ row, col, rows: r, cols: c }) => {
+  //   for (let i = row; i < row + r; i++) {
+  //     for (let j = col; j < col + c; j++) {
+  //       whiteCells.add(`${i}-${j}`);
+  //     }
+  //   }
+  // });
+
+  activeWhiteRegions.forEach(({ row, col, rows: r, cols: c }) => {
     for (let i = row; i < row + r; i++) {
       for (let j = col; j < col + c; j++) {
         whiteCells.add(`${i}-${j}`);
@@ -62,7 +83,7 @@ function peopleAnimation({
 
       const type = cells[index++];
       
-      cell.className = `w-[38.5px] h-[30px] lg:w-[86px] lg:h-[67px] ${
+      cell.className = `w-[70.59px] h-[55px] lg:w-[86px] lg:h-[67px] ${
         type === "yellow"
           ? yellowClass
           : ""
@@ -82,11 +103,11 @@ function peopleAnimation({
         );
 
         if (type === "image") {
-          cell.style.backgroundImage = `url("${imgPath}/${imgPrefix}${imgIndex}.png")`;
+          cell.style.backgroundImage = `url("${imgPath}/${imgPrefix}${imgIndex}.jpg")`;
         }
 
         if (type === "blue-image") {
-          cell.style.backgroundImage = `url("${imgPath}/${blueImagePrefix}${imgIndex}.png")`;
+          cell.style.backgroundImage = `url("${imgPath}/${blueImagePrefix}${imgIndex}.jpg")`;
         }
         cell.style.backgroundSize = "cover";
         cell.style.backgroundPosition = "center";
