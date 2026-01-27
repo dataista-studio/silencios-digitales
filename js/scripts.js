@@ -27,21 +27,12 @@ function peopleAnimation({
 
   const gridConfig = isDesktop
     ? { rows: 10, cols: 10 }
-    : { rows: 20, cols: 5 };
+    : { rows: 10, cols: 10 };
   
   const rows = gridConfig.rows;
   const cols = gridConfig.cols;
 
   const totalCells = rows * cols;
-
-    
-  //   activeWhiteRegions.forEach(({ row, col, rows: r, cols: c }) => {
-  //   for (let i = row; i < row + r; i++) {
-  //     for (let j = col; j < col + c; j++) {
-  //       whiteCells.add(`${i}-${j}`);
-  //     }
-  //   }
-  // });
 
   activeWhiteRegions.forEach(({ row, col, rows: r, cols: c }) => {
     for (let i = row; i < row + r; i++) {
@@ -76,14 +67,14 @@ function peopleAnimation({
       const cell = document.createElement("div");
 
       if (whiteCells.has(`${r}-${c}`)) {
-        cell.className = `w-[38.5px] h-[30px] lg:w-[86px] lg:h-[67px] ${whiteClass}`;
+        cell.className = `w-full h-full lg:w-[86px] lg:h-[67px] ${whiteClass}`;
         container.appendChild(cell);
         continue;
       }
 
       const type = cells[index++];
       
-      cell.className = `w-[70.59px] h-[55px] lg:w-[86px] lg:h-[67px] ${
+      cell.className = `w-full h-full lg:w-[86px] lg:h-[67px] ${
         type === "yellow"
           ? yellowClass
           : ""
@@ -99,8 +90,10 @@ function peopleAnimation({
           "grayscale",
           "transition-all",
           "duration-300",
-          "ease-in-out"
+          "ease-in-out",
+          "will-animate"   
         );
+        
 
         if (type === "image") {
           cell.style.backgroundImage = `url("${imgPath}/${imgPrefix}${imgIndex}.jpg")`;
@@ -113,11 +106,6 @@ function peopleAnimation({
         cell.style.backgroundPosition = "center";
         cell.style.backgroundRepeat = "no-repeat";
 
-        const delay = Math.random() * 800 + 100;
-
-        setTimeout(() => {
-          cell.classList.remove("grayscale");
-        }, delay);
 
         if (greyAnimation) {
           const overlay = document.createElement("div");
@@ -137,14 +125,39 @@ function peopleAnimation({
       
           cell.appendChild(overlay);
       
-          const overlayDelay = Math.random() * 800 + 200;
-          setTimeout(() => {
-            overlay.classList.add("opacity-100");
-          }, overlayDelay);
         }
       }
 
       container.appendChild(cell);
     }
   }
+
+  const observer = new IntersectionObserver(
+    ([entry], obs) => {
+      if (!entry.isIntersecting) return;
+  
+      const cells = container.querySelectorAll(".will-animate");
+  
+      cells.forEach(cell => {
+        const delay = Math.random() * 800 + 100;
+  
+        setTimeout(() => {
+          cell.classList.remove("grayscale");
+  
+          const overlay = cell.querySelector("div");
+          if (overlay) {
+            overlay.classList.add("opacity-100");
+          }
+        }, delay);
+      });
+  
+      obs.unobserve(container); // 👈 anima solo una vez
+    },
+    {
+      threshold: 1, // 40% visible → dispara
+    }
+  );
+  
+  observer.observe(container);
+  
 }

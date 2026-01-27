@@ -9,7 +9,6 @@
     <script src="./js/scripts.js"></script>
     <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
 	<script src="https://unpkg.com/scrollama"></script>
-    <script src="./js/scrollamaInit.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +21,7 @@
     <main>
 
         <section id="scrolly">
-            <article class="relative">
+            <article class="relative" id="bg-texture">
 
                 <div class="h-[89px] w-[95%] lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50">
                     <div class="h-[30px] flex items-center border-[0.3px] border-[#000000] rounded-t-lg relative">
@@ -75,7 +74,7 @@
 
                 </div>
 
-                <!-- <div class="w-full h-screen mx-auto flex flex-col items-center justify-center p-5 relative bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step" data-step="1">
+                <div class="w-full h-screen mx-auto flex flex-col items-center justify-center p-5 relative bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step" data-step="1">
 
                     <div class="w-max h-max">
                         <img src="./static/img/logo/logo_datagenero.png" alt="Logo" class="w-48 lg:w-64 h-auto">
@@ -93,38 +92,11 @@
                         
                     </div>
             
-                </div> -->
-
-                <!-- ANIMACIÓN -->
-                <!-- <div
-                    id="zip-animation-container"
-                    class="fixed top-0 left-0 w-screen h-screen bg-cover bg-no-repeat bg-center z-50">
                 </div>
 
+                <div class="flex flex-col bg-[url(./static/img/bg-image/textureBg.png)] bg-cover bg-no-repeat bg-center"></div>
 
-                <div
-                    id="main-content"
-                    class="hidden w-full h-screen mx-auto flex flex-col items-center justify-center p-5 relative
-                        bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step"
-                    data-step="1">
-
-                    <div class="flex flex-col items-center justify-center opacity-0 transition-opacity duration-500">
-                        <div class="w-max h-max">
-                            <img src="./static/img/logo/logo_datagenero.png" alt="Logo" class="w-48 lg:w-64 h-auto">
-                        </div>
-
-                        <div class="w-[300px] h-[120px] lg:w-[489.5px] lg:h-[195.5px] bg-[url(./static/img/Silenciosdigitales.gif)] bg-cover bg-no-repeat bg-center"></div>
-
-                        <p class="font-montserrat font-bold text-[20px] lg:text-[30px] mt-[20px] text-center text-[#343434]">
-                            Mapeando la violencia digital <br>de género en Argentina
-                        </p>
-                    </div>
-
-                </div> -->
-
-                
-
-                <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto step" data-step="2">
+                <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto step mt-10" data-step="2">
                     <h2 class="text-[#FF0B53] font-bold text-[30px] text-left">¿Qué es la violencia digital de género?</h2>
             
                     <p class="text-[18px] text-left"><span class="font-bold">Silencios Digitales</span> es el primer revelamiento nacional<br>
@@ -186,16 +158,16 @@
                             reconocen como violencia digital de género.
                         </p>
 
-                        <img src="./static/img/elements/chat.svg" class="h-[132px] w-[615px] ml-[-50px]" alt="">
+                        <img src="./static/img/elements/chat.svg" class="h-[132px] w-[615px] ml-[-50px]" id="chat-img" alt="">
                     </div>
 
-                    <div class="w-full h-full mx-auto flex items-center justify-center bg-white p-5 mt-10">
+                    <div class="w-full h-full mx-auto flex items-center justify-center p-5 mt-10">
                         <div class="relative">
-                            <div id="img-container-2" class="grid grid-cols-5 md:grid-cols-10 md:grid-rows-10 gap-2">
+                            <div id="img-container-2" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                 
                             </div>
-                            <div class="absolute top-[320px] md:top-[0px] left-[0px] md:left-[300px]">
-                                <p class="text-[#FF0B53] text-[20px] md:text-[25px]">
+                            <div class="absolute top-[140px] md:top-[0px] left-[10px] md:left-[300px]">
+                                <p class="text-[#FF0B53] text-[18px] md:text-[25px]">
                                     Solo <span class="text-[25px] md:text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">23%</span> <br>
                                     contestó que <br>
                                     <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
@@ -207,8 +179,8 @@
                                 </p>
                             </div>
                 
-                            <div class="absolute top-[635px] md:top-[230px] left-[235px] md:left-[470px]">
-                                <p class="text-[#0E1AFB] text-[20px] md:text-[25px]">
+                            <div class="absolute top-[320px] md:top-[230px] right-[50px] md:left-[470px]">
+                                <p class="text-[#0E1AFB] text-[18px] md:text-[25px]">
                                     <span class="text-[25px] md:text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#00F0E9]">14%</span> manifestó no <span class="font-bold">estar <br>
                                     segura o seguro de haber <br>
                                     vivido</span> este tipo de <br>
@@ -256,9 +228,6 @@
                             </p>
                         </div>
                     </div>
-                    
-                    
-
                 </div>
 
                 <div class="step" data-step="4">
@@ -291,7 +260,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
                 <div class="step" data-step="5">
 
@@ -642,26 +611,29 @@
 
                     </div>
                 </div>
-
-                <div class="step mx-auto w-[95%] lg:w-[50%] flex flex-col mt-10 gap-10" data-step="8">
-                    <p class="text-[18px] text-left text-[#343434]">
-                        Los datos son claros: la violencia de género digital desborda las capacidades <br>
-                        individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
-                    </p>
-
-                    <p class="text-[18px] text-left text-[#343434]">
-                        Se trata de un problema estructural que requiere políticas públicas sostenidas, <br>
-                        educación en derechos digitales y plataformas que asuman un rol activo en la <br>
-                        prevención, la protección y la reparación del daño.
-                    </p>
-
-                    <p class="text-[18px] text-left text-[#343434] font-bold">
-                        Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— <br>
-                        es el primer paso para romper los silencios digitales.
-                    </p>
-            
-
+                
+                <div class="step" data-step="10">
+                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col mt-10 gap-10 h-screen" >
+                        <p class="text-[18px] text-left text-[#343434]">
+                            Los datos son claros: la violencia de género digital desborda las capacidades <br>
+                            individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
+                        </p>
+    
+                        <p class="text-[18px] text-left text-[#343434]">
+                            Se trata de un problema estructural que requiere políticas públicas sostenidas, <br>
+                            educación en derechos digitales y plataformas que asuman un rol activo en la <br>
+                            prevención, la protección y la reparación del daño.
+                        </p>
+    
+                        <p class="text-[18px] text-left text-[#343434] font-bold">
+                            Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— <br>
+                            es el primer paso para romper los silencios digitales.
+                        </p>
+                
+    
+                    </div>
                 </div>
+                
             </article>
         </section>
 
@@ -690,8 +662,8 @@
         whiteRegions: { 
         
             mobile:[
-            { row: 5, col: 0, rows: 3, cols: 3 },
-            { row: 10, col: 3, rows: 4, cols: 2}
+            { row: 2, col: 0, rows: 3, cols: 3 },
+            { row: 5, col: 5, rows: 2, cols: 5}
             ],
             desktop:[
             { row: 0, col: 3, rows: 3, cols: 3 },
@@ -742,114 +714,22 @@
 
 </script>
 
-
-<!-- <script>
-  const container = document.getElementById("zip-animation-container");
-  const mainContent = document.getElementById("main-content");
-  const innerContent = mainContent.querySelector("div");
-
-  const frames = [
-    "static/img/Inicio 1.svg",
-    "static/img/Inicio 2.svg",
-    "static/img/Inicio 3.svg",
-    "static/img/Inicio 4.svg",
-    "static/img/Inicio 5.svg",
-    "static/img/Inicio 6.svg",
-  ];
-
-  let index = 0;
-  const frameDuration = 150;
-
-  const animation = setInterval(() => {
-    container.style.backgroundImage = `url('${frames[index]}')`;
-    index++;
-
-    if (index >= frames.length) {
-      clearInterval(animation);
-
-      setTimeout(() => {
-        // Quita animación
-        container.style.display = "none";
-
-        // Muestra layout principal
-        mainContent.classList.remove("hidden");
-
-        // Fade in del contenido
-        requestAnimationFrame(() => {
-          innerContent.classList.remove("opacity-0");
-          innerContent.classList.add("opacity-100");
-        });
-
-      }, 300);
-    }
-  }, frameDuration);
-</script> -->
-
-  
-
 <script>
-    // using d3 for convenience
 
-var main = d3.select("main");
-var scrolly = main.select("#scrolly");
-var figure = scrolly.select("figure");
-var article = scrolly.select("article");
-var step = article.selectAll(".step");
+const scroller = scrollama();
 
-// initialize the scrollama
-var scroller = scrollama();
-
-// generic window resize listener event
-function handleResize() {
-    // 1. update height of step elements
-    var stepH = Math.floor(window.innerHeight * 0.75);
-    step.style("height", stepH + "px");
-
-    var figureHeight = window.innerHeight / 2;
-    var figureMarginTop = (window.innerHeight - figureHeight) / 2;
-
-    figure
-        .style("height", figureHeight + "px")
-        .style("top", figureMarginTop + "px");
-
-    // 3. tell scrollama to update new element dimensions
-    scroller.resize();
-}
-
-// scrollama event handlers
-function handleStepEnter(response) {
-    console.log(response);
-    // response = { element, direction, index }
-
-    // add color to current step only
-    step.classed("is-active", function (d, i) {
-        return i === response.index;
+scroller
+  .setup({
+    step: ".step",
+    offset: 0.5
+  })
+  .onStepEnter(response => {
+    document.querySelectorAll(".step").forEach(step => {
+      step.classList.remove("is-active");
     });
 
-    // update graphic based on step
-    figure.select("p").text(response.index + 1);
-}
-
-
-function init() {
-
-    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
-    handleResize();
-
-    // 2. setup the scroller passing options
-    // 		this will also initialize trigger observations
-    // 3. bind scrollama event handlers (this can be chained like below)
-    scroller
-        .setup({
-            step: "#scrolly article .step",
-            offset: 0.33,
-            debug: false
-        })
-        .onStepEnter(handleStepEnter);
-}
-
-// kick things off
-init();
+    response.element.classList.add("is-active");
+  });
 </script>
 
 </html
