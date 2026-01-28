@@ -94,7 +94,7 @@
             
                 </div>
 
-                <div class="flex flex-col bg-[url(./static/img/bg-image/textureBg.png)] bg-cover bg-no-repeat bg-center"></div>
+                <div class="flex flex-col bg-[url(./static/img/bg-image/textureBg.svg)] bg-cover bg-no-repeat bg-center"></div>
 
                 <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto step mt-10" data-step="2">
                     <h2 class="text-[#FF0B53] font-bold text-[30px] text-left">¿Qué es la violencia digital de género?</h2>
@@ -491,15 +491,18 @@
 
                     <div class="flex flex-col w-full mx-auto mt-10">
 
-                        <ul>
-                            <li >
-                                <div class="h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                    <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
-                                        <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#1</span>
-                                        Responsabilidad de las plataformas
-                                    </p>
+                        <ul id="accordion">
+                            <li class="accordion-item">
+                                <div class="flex flex-col">
 
-                                    </div class="flex flex-col gap-5 w-[95%] lg:w-[50%] mx-auto mt-10">
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
+                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                            <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#1</span>
+                                            Responsabilidad de las plataformas
+                                        </p>
+                                    </div>  
+
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 w-[95%] lg:w-[50%] mx-auto mt-10">
 
                                         <p class="mt-10 ml-10">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
 
@@ -513,19 +516,21 @@
 
                                                 <img src="./static/img/icons/build.svg" class="h-[210px] w-[210px]" alt="">
 
-                                        </div>
-                                        
+                                        </div>  
                                     <div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                    <p class="text-[20px] lg:text-[30px] font-bold text-white">
-                                        <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#2</span>
-                                        Concientización y educación
-                                    </p>
+                            </li>    
+                            <li class="accordion-item">
 
-                                    </div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
+                                <div class="flex flex-col">
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
+                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                            <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#2</span>
+                                            Concientización y educación
+                                        </p>
+                                    </div>  
+
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
 
                                         <p class="mt-10 ml-10">La prevención aparece como una prioridad central.</p>
 
@@ -562,21 +567,23 @@
                                         </div>
                                 
                                     <div>
+
                                 </div>
                             </li>
-                            <li>
-                                <div class="h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                    <p class="txt-[20px] lg:text-[30px] font-bold text-white">
-                                        <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#3</span>
-                                        Fortalecimiento institucional y rol del Estado
-                                    </p>
+                            <li class="accordion-item">
 
-                                    </div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
+                                <div class="flex flex-col">
 
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
+                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                            <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#3</span>
+                                            Fortalecimiento institucional y rol del Estado
+                                        </p>
+                                    </div>  
+
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
                                         <p class="mt-10 ml-10">Las personas reclaman un Estado presente, con capacidad de respuesta.</p>
-
                                         <div class="flex flex-col lg:flex-row gap-10 justify-center items-center my-10">
-
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
                                                 <img src="./static/img/icons/justice.svg" class="h-[174px] w-[174px]" alt="">
                                                 <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">62,4%</span> señala la
@@ -585,10 +592,7 @@
                                                         especializados y mecanismos  
                                                         <br>de seguimiento</span> de los casos.<br>
                                                 </p>   
-
                                             </div>
-
-                                            
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
                                                 <img src="static/img/icons/hands.svg" class="h-[174px] w-[174px]" alt="">
                                                 <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">58,7%</span> 
@@ -599,21 +603,15 @@
                                                         atraviesan estas violencias. </span>
                                                 </p>  
                                             </div>
-                                            
-                                            
-
                                         </div>
-                                
                                     <div>
                                 </div>
                             </li>
                         </ul>
 
                     </div>
-                </div>
-                
-                <div class="step" data-step="10">
-                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col mt-10 gap-10 h-screen" >
+
+                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 my-20" >
                         <p class="text-[18px] text-left text-[#343434]">
                             Los datos son claros: la violencia de género digital desborda las capacidades <br>
                             individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
@@ -633,7 +631,7 @@
     
                     </div>
                 </div>
-                
+                                
             </article>
         </section>
 
@@ -815,6 +813,46 @@ function updateNavbarActive(stepNumber) {
     }
   });
 }
+
+</script>
+
+<script>
+
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        openAccordion(entry.target);
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-45% 0px -40% 0px"
+  }
+);
+
+accordionItems.forEach(item => observer.observe(item));
+
+function openAccordion(activeItem) {
+  accordionItems.forEach(item => {
+    const content = item.querySelector(".accordion-content");
+    if (!content) return;
+
+    if (item === activeItem) {
+        content.style.height = "500px";
+        content.style.opacity = "1";
+        } else {
+        content.style.height = "0px";
+        content.style.opacity = "0";
+        }
+
+  });
+}
+
 
 </script>
 
