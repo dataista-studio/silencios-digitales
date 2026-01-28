@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/scrollama.css">
+    <link rel="stylesheet" href="./styles/loader.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./js/scripts.js"></script>
     <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
@@ -19,6 +20,13 @@
 <body>
 
     <main>
+
+        <div id="loader">
+            <video autoplay muted loop playsinline>
+              <source src="./static/movie/animacion.mp4" type="video/mp4">
+              Tu navegador no soporta video.
+            </video>
+        </div>
 
         <section id="scrolly">
             <article class="relative" id="bg-texture">
@@ -853,7 +861,19 @@ function openAccordion(activeItem) {
   });
 }
 
-
 </script>
 
+<script>
+    document.body.classList.add("loading");
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    document.body.classList.remove("loading");
+  }, 500);
+});
+
+</script>
 </html
