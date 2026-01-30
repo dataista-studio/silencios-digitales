@@ -18,9 +18,9 @@
     <title>Silencios Digitales</title>
 
 </head>
-<body>
+<body class="overflow-x-hidden "w-screen mx-auto">
 
-    <main class="w-screen mx-auto">
+    <main>
 
         <div id="loader">
             <video autoplay muted loop playsinline>
@@ -35,13 +35,13 @@
                 <div id="navbar" class="h-[89px] w-[95%] mt-2 lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none shadow-lg">
                     <div class="h-[1.875rem] flex border-[#000000] rounded-t-lg relative" style="border: 0.3px solid;">
 
-                        <ul class="flex h-full items-center gap-5 left-[0.625rem] lg:left-[110px] absolute">
+                        <ul class="flex h-full items-center gap-1 md:gap-5 left-[0.625rem] lg:left-[110px] absolute">
                             <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;"></li>
-                            <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;"></li>
-                            <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;""></li>
+                            <li class="lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;"></li>
+                            <li class="lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;""></li>
                         </ul>
 
-                        <ul class="absolute right-[2.5rem] lg:left-[408px] flex h-full items-end">
+                        <ul class="absolute right-[0.2rem] lg:left-[408px] flex h-full items-end">
                             <li data-step="3" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
 >
                                 <img src="./static/img/icons/search.svg" alt="" class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
@@ -81,8 +81,8 @@
                     </div>
 
                     <div class="bg-[url(./static/img/bg-image/navbarBg.svg)] bg-cover bg-no-repeat bg-center h-[59px] flex items-center justify-center z-1">
-                        <div class="flex justify-between items-center bg-white rounded-lg h-[43px] w-[95%] lg:w-[80%] shadow-2xl z-10 px-5">
-                            <p class="text-[0.875rem] lg:text-[1.5625rem] font-bold">
+                        <div class="flex justify-between items-center bg-white rounded-lg h-[43px] w-[95%] lg:w-[80%] shadow-2xl z-10 px-2 md:px-5">
+                            <p class="text-[0.7rem] lg:text-[1.5625rem] font-bold">
                                 <span id="navbar-text"></span>
                                 <span id="cursor"></span>
                             </p>                            
@@ -183,7 +183,7 @@
                             <div id="img-container-2" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                 
                             </div>
-                            <div class="absolute top-[85px] md:top-[0px] left-[0.625rem] md:left-[300px]">
+                            <div class="absolute top-[85px] md:top-[0px] left-[0.625rem] md:left-[300px] max-w-[7rem] md:max-w-[16.125rem] p-2">
                                 <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.5625rem]">
                                     Solo <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">23%</span> 
                                     contestó que 
@@ -196,7 +196,7 @@
                                 </p>
                             </div>
                 
-                            <div class="absolute top-[200px] md:top-[230px] right-[1.25rem] md:left-[490px]">
+                            <div class="absolute top-[200px] md:top-[230px] right-[1.25rem] md:left-[490px] max-w-[10rem] md:max-w-[21.5rem] p-2">
                                 <p class="text-[#0E1AFB] text-[0.75rem] md:text-[1.5625rem]">
                                     <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] bg-[#00F0E9]">14%</span> manifestó no <span class="font-bold">estar 
                                     segura o seguro de haber 
@@ -218,7 +218,7 @@
                             <div id="img-container-1" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                 
                             </div>
-                            <div class="absolute top-[203px] left-[38px] md:top-[260px] md:left-[290px]">
+                            <div class="absolute top-[12.3rem] left-[2.375rem] md:top-[16.25rem] md:left-[18.125rem] max-w-[7.5rem] md:max-w-[21.5rem] p-2">
                                 <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.5625rem]">
                                     El <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">40%</span> de las personas 
                                     <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
@@ -297,7 +297,7 @@
                             <div id="img-container-3" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                 
                             </div>
-                            <div class="absolute top-[200px] left-[42px] md:top-[70px] md:left-[100px]">
+                            <div class="absolute top-[12.5rem] left-[1.9rem] md:top-[4.5rem] md:left-[6.25rem] max-w-[10rem] md:max-w-[21.5rem] p-2">
                                 <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
                                     El <span class=" text-[1.375rem] lg:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">76%</span> de las 
                                     personas 
@@ -445,7 +445,7 @@
                                 <div id="img-container-4" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                     
                                 </div>
-                                <div class="absolute top-[200px] left-[0.625rem] md:top-[180px] md:top-[170px] md:left-[1.25rem]">
+                                <div class="absolute top-[12.5rem] left-[0.2rem] md:top-[11.25rem] md:top-[10.625rem] md:left-[1.25rem] max-w-[10rem] md:max-w-[16.125rem] p-2">
                                     <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
                                         Un <span class="text-[1.375rem] md:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">66%</span> afirma 
                                         <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
@@ -466,7 +466,7 @@
                                 <div id="img-container-5" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                     
                                 </div>
-                                <div class="absolute top-[210px] left-[0.625rem] md:top-[80px] md:left-[290px]">
+                                <div class="absolute top-[12.7rem] left-[0.3rem] md:top-[5rem] md:left-[18.125rem] max-w-[10rem] md:max-w-[20rem]">
                                     <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
                                         Un <span class="text-[1.375rem] md:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">62%</span>
                                         <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
@@ -669,7 +669,7 @@
         imgPath: "./static/img/people",
         imgPrefix: "P",
         whiteRegions:{  
-            mobile: [{ row: 5, col: 1, rows: 2, cols: 4}],
+            mobile: [{ row: 5, col: 1, rows: 3, cols: 4}],
             desktop:[{ row: 3, col: 3, rows: 3, cols: 4 }]
         }
     });
@@ -700,7 +700,7 @@
         ratio: 0.76,
         whiteRegions: {
             mobile: [{row: 5, col: 1, rows:2, cols: 4}],
-            desktop:[{ row: 1, col: 1, rows: 2, cols: 3 }]
+            desktop:[{ row: 1, col: 1, rows: 2, cols: 4 }]
     },
         blueRatio: 0,
         greyAnimation: true
@@ -727,7 +727,7 @@
             mobile: [{ row: 5, col: 0, rows: 1, cols: 4 },
                     { row: 6, col: 0, rows: 1, cols: 5 }],  
             desktop:[
-                { row: 1, col: 3, rows: 1, cols: 3 },
+                { row: 1, col: 3, rows: 1, cols: 4 },
                 { row: 2, col: 3, rows: 1, cols: 4 }] 
         },
         blueRatio: 0,
