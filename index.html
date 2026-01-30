@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/scrollama.css">
     <link rel="stylesheet" href="./styles/loader.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="./js/scripts.js"></script>
     <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
@@ -19,7 +20,7 @@
 </head>
 <body>
 
-    <main>
+    <main class="w-screen mx-auto">
 
         <div id="loader">
             <video autoplay muted loop playsinline>
@@ -31,43 +32,49 @@
         <section id="scrolly">
             <article class="relative" id="bg-texture">
 
-                <div id="navbar" class="h-[89px] w-[95%] lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none">
-                    <div class="h-[30px] flex items-center border-[0.3px] border-[#000000] rounded-t-lg relative">
+                <div id="navbar" class="h-[89px] w-[95%] mt-2 lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none shadow-lg">
+                    <div class="h-[1.875rem] flex border-[#000000] rounded-t-lg relative" style="border: 0.3px solid;">
 
-                        <ul class="flex gap-5 left-[10px] lg:left-[110px] absolute">
-                            <li class="h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] bg-[#AAA3A3] rounded-full border-[0.3px] border-[#000000]"></li>
-                            <li class="h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] bg-[#AAA3A3] rounded-full border-[0.3px] border-[#000000]"></li>
-                            <li class="h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] bg-[#AAA3A3] rounded-full border-[0.3px] border-[#000000]"></li>
-
+                        <ul class="flex h-full items-center gap-5 left-[0.625rem] lg:left-[110px] absolute">
+                            <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;"></li>
+                            <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;"></li>
+                            <li class="h-[0.75rem] w-[0.75rem] lg:h-[0.9375rem] lg:w-[0.9375rem] bg-[#AAA3A3] rounded-full border-[#000000]" style="border: 0.3px solid;""></li>
                         </ul>
 
-                        <ul class="absolute right-[2.5rem] lg:left-[408px] flex">
-                            <li data-step="3" class="nav-item w-[40px] lg:w-[93px] h-[25px] rounded-t-xl border-[0.3px] border-[#000000] top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100">
-                                <img src="./static/img/icons/search.svg" alt="" class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                        <ul class="absolute right-[2.5rem] lg:left-[408px] flex h-full items-end">
+                            <li data-step="3" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/search.svg" alt="" class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="4" class="nav-item w-[40px] lg:w-[93px] h-[25px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/clock.svg" alt="" class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="4" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/clock.svg" alt="" class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="5" class="nav-item w-[40px] lg:w-[93px] h-[25px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/mute.svg" alt="" class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="5" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl top-[-0.125rem] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/mute.svg" alt="" class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="6" class="nav-item w-[40px] lg:w-[93px] h-[25px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/check.svg" alt="" class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="6" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl top-[-0.125rem] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/check.svg" alt="" class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="7" class="nav-item w-[40px] lg:w-[93px] h-[25px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/people.svg" alt=""  class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="7" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl top-[-0.125rem] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/people.svg" alt=""  class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="8" class="nav-item w-[40px] lg:w-[93px] h-[25px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/tools.svg" alt=""  class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="8" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl top-[-0.125rem] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/tools.svg" alt=""  class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
 
-                            <li data-step="9" class="nav-item w-[40px] lg:w-[93px] border-[0.3px] border-[#000000] rounded-t-xl top-[-2px] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer">
-                                <img src="./static/img/icons/question.svg" alt=""  class="nav-icon h-[12px] w-[12px] lg:h-[16.2px] lg:w-[16.2px]">
+                            <li data-step="9" class="nav-item w-[2.5rem] lg:w-[5.8125rem] h-[1.5625rem]  border-[#000000] rounded-t-xl top-[-0.125rem] flex items-center justify-center transition-all duration-300 ease-out scale-100 hover:cursor-pointer border-b-0" style="border:0.3px solid #000000; border-bottom:0;"
+>
+                                <img src="./static/img/icons/question.svg" alt=""  class="nav-icon h-[0.75rem] w-[0.75rem] lg:h-[1.0125rem] lg:w-[1.0125rem]">
                             </li>
                         </ul>
 
@@ -75,14 +82,16 @@
 
                     <div class="bg-[url(./static/img/bg-image/navbarBg.svg)] bg-cover bg-no-repeat bg-center h-[59px] flex items-center justify-center z-1">
                         <div class="flex justify-between items-center bg-white rounded-lg h-[43px] w-[95%] lg:w-[80%] shadow-2xl z-10 px-5">
-                            <p id="navbar-text"class="text-[14px] lg:text-[25px] font-bold"></p>
-                            
+                            <p class="text-[0.875rem] lg:text-[1.5625rem] font-bold">
+                                <span id="navbar-text"></span>
+                                <span id="cursor"></span>
+                            </p>                            
                         </div>
                     </div>
 
                 </div>
 
-                <div class="w-full h-screen mx-auto flex flex-col items-center justify-center p-5 relative bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step" data-step="1">
+                <div class="w-screen h-screen mx-auto flex flex-col items-center justify-center p-5 relative bg-[url(./static/img/bg-image/bg1.png)] bg-cover bg-no-repeat bg-center step" data-step="1">
 
                     <div class="w-max h-max">
                         <img src="./static/img/logo/logo_datagenero.png" alt="Logo" class="w-48 lg:w-64 h-auto">
@@ -93,7 +102,7 @@
                     </div>
 
                     <div>
-                        <p class="font-montserrat font-bold text-[20px] lg:text-[30px] mt-[20px] text-center text-[#343434]">Mapeando la violencia digital <br>de género en Argentina</p>
+                        <p class="font-montserrat font-bold text-[1.25rem] lg:text-[1.875rem] mt-[1.25rem] text-center text-[#343434]">Mapeando la violencia digital <br>de género en Argentina</p>
                     </div>
             
                     <div class="absolute top-0 left-0 bg-cover bg-no-repeat bg-center w-screen h-screen transition-all linear " id="zip-animation-container">
@@ -104,43 +113,43 @@
 
                 <div class="flex flex-col bg-[url(./static/img/bg-image/textureBg.svg)] bg-cover bg-no-repeat bg-center"></div>
 
-                <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto step mt-10" data-step="2">
-                    <h2 class="text-[#FF0B53] font-bold text-[30px] text-left">¿Qué es la violencia digital de género?</h2>
+                <div class="flex flex-col gap-10 flex-start w-[95%] lg:w-[50%] mx-auto step mt-10" data-step="2">
+                    <h2 class="text-[#FF0B53] font-bold text-[1.875rem] text-center">¿Qué es la violencia digital de género?</h2>
             
-                    <p class="text-[18px] text-left"><span class="font-bold">Silencios Digitales</span> es el primer revelamiento nacional<br>
+                    <p class="text-[1.4375rem] text-left"><span class="font-bold">Silencios Digitales</span> es el primer revelamiento nacional
                         sobre violencia digital de género en Argentina.</p>
             
-                    <p class="text-[18px] text-left">Cada vez se habla más de este tipo de violencia.<br>
-                        Pero la pregunta sigue siendo clave:<br>
+                    <p class="text-[1.4375rem] text-left">Cada vez se habla más de este tipo de violencia.
+                        Pero la pregunta sigue siendo clave:
                         <span class="font-bold">¿sabemos realmente de qué estamos hablando?</span>
                     </p>
             
-                    <p class="text-[18px] text-left text-[#343434]">
-                        En un contexto de creciente digitalización de la vida cotidiana, las violencias <br>
-                        que históricamente han afectado a mujeres y personas LGBTI+ no desaparecen: <br>
+                    <p class="text-[1.4375rem] text-left text-[#343434]">
+                        En un contexto de creciente digitalización de la vida cotidiana, las violencias 
+                        que históricamente han afectado a mujeres y personas LGBTI+ no desaparecen: 
                         <span class="underline">se transforman y se amplifican a través de las tecnologías digitales.</span>
                     </p>
             
-                    <p class="text-[18px] text-left text-[#343434]">
-                        <span class="text-[#FF0B53]">  El hostigamiento constante, la vigilancia, la suplantación de identidad, la <br>
-                                difusión no consentida de imágenes íntimas, los discursos de odio y los ataques <br>
+                    <p class="text-[1.4375rem] text-left text-[#343434]">
+                        <span class="text-[#FF0B53]">  El hostigamiento constante, la vigilancia, la suplantación de identidad, la 
+                                difusión no consentida de imágenes íntimas, los discursos de odio y los ataques 
                                 coordinados 
                         </span> en redes son algunas de sus expresiones más frecuentes.
                     </p>
             
-                    <p class="text-[18px] text-left text-[#343434]">
-                        Se trata de una <span class="font-bold">problemática urgente, con consecuencias reales</span> sobre la vida, <br>
-                        la salud y la participación social de quienes la sufren. <br>
-                        Sin embargo, hasta ahora, ha contado con pocos datos sistemáticos y <br>
+                    <p class="text-[1.4375rem] text-left text-[#343434]">
+                        Se trata de una <span class="font-bold">problemática urgente, con consecuencias reales</span> sobre la vida, 
+                        la salud y la participación social de quienes la sufren. 
+                        Sin embargo, hasta ahora, ha contado con pocos datos sistemáticos y 
                         respuestas institucionales insuficientes.
                     </p>
             
-                    <p class="text-[18px] text-left text-[#343434]">
-                        La violencia digital de género puede definirse como <br>
+                    <p class="text-[1.4375rem] text-left text-[#343434]">
+                        La violencia digital de género puede definirse como 
                         <span class="text-[#0E1AFB] font-bold">
-                            cualquier conducta dirigida contra mujeres, niñas y otras personas en razón <br>
-                            de su orientación sexual, identidad o expresión de género, que cause daño y <br>
-                            que sea cometida, facilitada o amplificada mediante el uso de tecnologías <br>
+                            cualquier conducta dirigida contra mujeres, niñas y otras personas en razón 
+                            de su orientación sexual, identidad o expresión de género, que cause daño y 
+                            que sea cometida, facilitada o amplificada mediante el uso de tecnologías 
                             de la información y la comunicación (TIC).
                         </span>
                     </p>
@@ -148,25 +157,25 @@
 
                 <div class="step" data-step="3">
                     <div class="flex flex-col gap-10 flex-start w-[95%] lg:w-[50%] mx-auto mt-20">
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Para comprender cómo se manifiesta —y cómo se reconoce— <br>
-                            la violencia digital de género, en <span class="font-bold">Silencios Digitales</span> hicimos <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Para comprender cómo se manifiesta —y cómo se reconoce— 
+                            la violencia digital de género, en <span class="font-bold">Silencios Digitales</span> hicimos 
                             dos preguntas distintas.
                         </p>
                 
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Por un lado, una pregunta directa: si la persona consideraba <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Por un lado, una pregunta directa: si la persona consideraba 
                             haber vivido una situación de violencia digital de género
                         </p>
                 
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Por otro, una pregunta basada en hechos concretos: si había <br>
-                            experimentado, en los últimos 24 meses, 18 situaciones <br>
-                            específicas que la literatura y los marcos normativos <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Por otro, una pregunta basada en hechos concretos: si había 
+                            experimentado, en los últimos 24 meses, 18 situaciones 
+                            específicas que la literatura y los marcos normativos 
                             reconocen como violencia digital de género.
                         </p>
 
-                        <img src="./static/img/elements/chat.svg" class="h-[132px] w-[615px] ml-[-50px]" id="chat-img" alt="">
+                        <img src="./static/img/elements/chat.svg" class="h-[132px] w-[615px] ml-[-3.125rem]" id="chat-img" alt="">
                     </div>
 
                     <div class="w-full h-full mx-auto flex items-center justify-center p-5 mt-10">
@@ -174,24 +183,24 @@
                             <div id="img-container-2" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                 
                             </div>
-                            <div class="absolute top-[85px] md:top-[0px] left-[10px] md:left-[300px]">
-                                <p class="text-[#FF0B53] text-[12px] md:text-[25px]">
-                                    Solo <span class="text-[22px] md:text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">23%</span> <br>
-                                    contestó que <br>
+                            <div class="absolute top-[85px] md:top-[0px] left-[0.625rem] md:left-[300px]">
+                                <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.5625rem]">
+                                    Solo <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">23%</span> 
+                                    contestó que 
                                     <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                    sí ha vivido <br>
+                                    sí ha vivido 
                                     violencia
-                                    </span> de <br>
-                                    género en <br>
+                                    </span> de 
+                                    género en 
                                     entornos digitales
                                 </p>
                             </div>
                 
-                            <div class="absolute top-[200px] md:top-[230px] right-[20px] md:left-[490px]">
-                                <p class="text-[#0E1AFB] text-[12px] md:text-[25px]">
-                                    <span class="text-[22px] md:text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#00F0E9]">14%</span> manifestó no <span class="font-bold">estar <br>
-                                    segura o seguro de haber <br>
-                                    vivido</span> este tipo de <br>
+                            <div class="absolute top-[200px] md:top-[230px] right-[1.25rem] md:left-[490px]">
+                                <p class="text-[#0E1AFB] text-[0.75rem] md:text-[1.5625rem]">
+                                    <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] bg-[#00F0E9]">14%</span> manifestó no <span class="font-bold">estar 
+                                    segura o seguro de haber 
+                                    vivido</span> este tipo de 
                                     violencia.
                                 </p>
                             </div>
@@ -200,7 +209,7 @@
                     </div>
 
                     <div>
-                        <p class="font-bold text-[25px] text-center my-30">Sin embargo, cuando se indagó a <br>
+                        <p class="font-bold text-[1.5625rem] text-center my-30">Sin embargo, cuando se indagó a 
                             partir de situaciones concretas</p>
                     </div>
 
@@ -210,72 +219,76 @@
                 
                             </div>
                             <div class="absolute top-[203px] left-[38px] md:top-[260px] md:left-[290px]">
-                                <p class="text-[#FF0B53] text-[12px] md:text-[25px]">
-                                    El <span class="text-[22px] md:text-[30px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">40%</span> de las personas <br>
+                                <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.5625rem]">
+                                    El <span class="text-[1.375rem] md:text-[1.875rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">40%</span> de las personas 
                                     <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                        señaló haber atravesado al <br>
-                                        menos una situación de <br>
-                                        violencia digital de género <br>
+                                        señaló haber atravesado al 
+                                        menos una situación de 
+                                        violencia digital de género 
                                     </span>
                                     en los últimos dos años</p>
                             </div>
                                 
                         </div>
                     </div>
-
-                    <div class="bg-[url(./static/img/bg-image/div1Bg.svg)] bg-cover w-full h-[294px] flex items-center justify-center">
-                        <div class="mx-auto flex items-center justify-center bg-white p-5 h-[203px] w-[524px] border-l-[9px] border-[#FF0B53]">
-                            <p class="text-[25px] text-[#343434]">
-                                Estos datos revelan algo central:<br> 
-                                <span class="font-bold">
-                                la violencia digital de género <br>
-                                muchas veces se vive, pero no <br>
-                                siempre se nombra ni se <br>
-                                reconoce como tal.
-                                </span>
-                            </p>
+                    
+                    <div class="w-full h-[80vh] flex items-center justify-center">
+                        <div class="bg-[url(./static/img/bg-image/div1Bg.svg)] bg-cover w-full h-[294px] flex items-center justify-center">
+                            <div class="mx-auto flex items-center justify-center bg-white p-5 h-[203px] w-[524px] border-l-[9px] border-[#FF0B53]">
+                                <p class="text-[1.5625rem] text-[#343434]">
+                                    Estos datos revelan algo central: 
+                                    <span class="font-bold">
+                                    la violencia digital de género 
+                                    muchas veces se vive, pero no 
+                                    siempre se nombra ni se 
+                                    reconoce como tal.
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
 
                 <div class="step" data-step="4">
-                    <div class="flex flex-col gap-20 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
-                        <p class="text-[18px] text-left text-[#343434]">
-                            <span class="text-[#0E1AFB]">Internet atraviesa nuestra vida cotidiana.</span> <br>
-                            Los datos de Silencios Digitales muestran una alta exposición <br>
+                    <div class="flex flex-col gap-10 flex-start w-[95%] lg:w-[45%] mx-auto mt-10">
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            <span class="">Internet atraviesa nuestra vida cotidiana.</span> 
+                            Los datos de Silencios Digitales muestran una alta exposición 
                             diaria a entornos digitales. 
                         </p>
                 
-                        <p class="text-[25px] text-[#FF0B53]">Un <span class="text-[40px] font-extrabold">35%</span> utiliza internet más de <span class="font-bold">6 horas por día</span></p>
+                        <p class="text-[1.5625rem] text-[#FF0B53]">Un <span class="text-[2.5rem] font-extrabold">35%</span> utiliza internet más de <span class="font-bold">6 horas por día</span></p>
                 
-                        <p class="text-[25px] text-[#0E1AFB]">Un <span class="text-[40px] font-extrabold">35%</span> pasa <span class="font-bold">entre 4 y 6 horas diarias</span> en plataformas digitales</p>
+                        <p class="text-[1.5625rem] text-[#0E1AFB]">Un <span class="text-[2.5rem] font-extrabold">35%</span> pasa <span class="font-bold">entre 4 y 6 horas diarias</span> en plataformas digitales</p>
                 
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Trabajamos, nos informamos, militamos, construimos vínculos, <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Trabajamos, nos informamos, militamos, construimos vínculos, 
                             opinamos y participamos en la vida pública a través de redes y plataformas.
                         </p>
                     </div>
-
-                    <div class="bg-[url(./static/img/bg-image/div2Bg.svg)] bg-cover w-full h-[294px] flex items-center justify-center relative mt-10">
-                        <div class="mx-auto flex items-center justify-center bg-white p-5 h-[203px] w-[400px] border-l-[9px] border-[#FF0B53] absolute top-[85px]">
-                            <p class="text-[25px] text-[#343434]">
-                                La pregunta es inevitable: <br> 
-                                <span class="font-bold">
-                                ¿es un espacio seguro? <br>
-                                ¿cómo lo habitamos?
-                                </span>
-                            </p>
+                    
+                    <div class="w-full h-[40vh] flex items-center justify-center">
+                        <div class="bg-[url(./static/img/bg-image/div2Bg.svg)] bg-cover w-full h-[294px] flex items-center justify-center relative mt-10">
+                            <div class="mx-auto flex items-center justify-center bg-white p-5 h-[203px] w-[400px] border-l-[9px] border-[#FF0B53] absolute top-[85px]">
+                                <p class="text-[1.5625rem] text-[#343434]">
+                                    La pregunta es inevitable:  
+                                    <span class="font-bold">
+                                    ¿es un espacio seguro? 
+                                    ¿cómo lo habitamos?
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="step" data-step="5">
 
-                    <div class="w-[95%] lg:w-[50%] mx-auto mt-20">
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Los datos muestran que <span class="text-[#0E1AFB] font-bold">la autocensura se convirtió en una <br>
-                            estrategia extendida de supervivencia digital.</span> <br> 
+                    <div class="w-[95%] lg:w-[50%] mx-auto my-15">
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Los datos muestran que <span class="text-[#0E1AFB] font-bold">la autocensura se convirtió en una 
+                            estrategia extendida de supervivencia digital.</span>  
                         </p>
                     </div>
 
@@ -285,20 +298,20 @@
                 
                             </div>
                             <div class="absolute top-[200px] left-[42px] md:top-[70px] md:left-[100px]">
-                                <p class="text-[#FF0B53] text-[12px] md:text-[23px]">
-                                    El <span class=" text-[22px] lg:text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">76%</span> de las <br>
-                                    personas <br>
-                                    <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                    declara no sentirse <br>
+                                <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
+                                    El <span class=" text-[1.375rem] lg:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">76%</span> de las 
+                                    personas 
+                                    <span class="font-bold underline decoration-[#00F0E9] decoration-[2px]">
+                                    declara no sentirse 
                                     libre de publicar
-                                    </span> lo que <br>
+                                    </span> lo que 
                                     quiere en redes sociales
                                 </p>
                             </div>
                                 
                         </div>
                 
-                        <p class="text-[18px] text-left text-[#343434] my-20">
+                        <p class="text-[1.4375rem] text-left text-[#343434] my-20">
                             Entre los principales motivos para limitar lo que se publica se repiten patrones claros:
                         </p>
                 
@@ -306,9 +319,9 @@
                             <div class="h-[353px] w-[295px] flex flex-col justify-end">
                                 <img src="./static/img/elements/1.png" alt="Logo" class="w-full h-auto bg-cover">
                                 <div class="flex items-center justify-center shadow-lg rounded-b-2xl h-[144px] w-full border-t-[9px] border-[#FF0B53]">
-                                    <p class="text-[18px] text-center">
-                                        Evitar hablar de política <br>
-                                        para no generar conflictos <br>
+                                    <p class="text-[1.4375rem] text-center">
+                                        Evitar hablar de política 
+                                        para no generar conflictos 
                                         con familiares o amistades</p>
                                 </div>
                             </div>
@@ -316,9 +329,9 @@
                             <div class="h-[353px] w-[295px] flex flex-col justify-end">
                                 <img src="./static/img/elements/2.png" alt="Logo" class="w-full h-auto bg-cover">
                                 <div class="flex items-center justify-center shadow-lg rounded-b-2xl h-[144px] w-full border-t-[9px] border-[#00F0E9]">
-                                    <p class="text-[18px] text-center">
-                                        Evitar posicionamientos <br>
-                                        políticos por miedo a <br>
+                                    <p class="text-[1.4375rem] text-center">
+                                        Evitar posicionamientos 
+                                        políticos por miedo a 
                                         repercusiones laborales
                                     </p>
                                 </div>
@@ -327,9 +340,9 @@
                             <div class="h-[353px] w-[295px] flex flex-col items-center justify-end">
                                 <img src="./static/img/elements/3.png" alt="Logo" class="w-auto h-[209px] bg-cover">
                                 <div class="flex items-center justify-center shadow-lg rounded-b-2xl h-[144px] w-full border-t-[9px] border-[#FF0B53]">
-                                    <p class="text-[18px] text-center">Evitar ciertos temas por <br>
-                                        temor a que afecten la <br>
-                                        imagen pública o la <br>
+                                    <p class="text-[1.4375rem] text-center">Evitar ciertos temas por 
+                                        temor a que afecten la 
+                                        imagen pública o la 
                                         credibilidad profesional</p>
                                 </div>
                             </div>
@@ -340,16 +353,16 @@
 
                 <div class="step" data-step="6">
                     <div class="flex flex-col gap-20 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
-                        <p class="text-[18px] text-left text-[#343434]">
-                            La violencia digital de género no es abstracta ni simbólica. <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            La violencia digital de género no es abstracta ni simbólica. 
                             Tiene impactos concretos y profundos en la vida de las personas.
                         </p>
                 
                         <div class="flex flex-col lg:flex-row gap-10 items-center">
                             <img src="./static/img/elements/hombrepanic.png" alt="Logo" class="w-max h-[340px]">
                 
-                            <p class="text-[18px] text-left text-[#343434]">
-                                En el plano emocional y subjetivo, quienes la vivieron relatan <br>
+                            <p class="text-[1.4375rem] text-left text-[#343434]">
+                                En el plano emocional y subjetivo, quienes la vivieron relatan 
                                 miedo, asco, angustia, bronca y malestar persistente.
                             </p>
                         </div>
@@ -357,24 +370,26 @@
                         <div class="flex flex-col lg:flex-row gap-10 items-center">
                             <img src="./static/img/elements/mujerestrés.png" alt="Logo" class="w-max h-[340px]">
                 
-                            <p class="text-[18px] text-left text-[#343434]">
-                                En la salud mental, aparecen consecuencias que requieren <br>
-                                atención profesional: ansiedad, ataques de pánico, depresión, <br>
-                                aislamiento, dificultades para dormir y, en algunos casos, temor <br>
+                            <p class="text-[1.4375rem] text-left text-[#343434]">
+                                En la salud mental, aparecen consecuencias que requieren 
+                                atención profesional: ansiedad, ataques de pánico, depresión, 
+                                aislamiento, dificultades para dormir y, en algunos casos, temor 
                                 incluso a salir de la propia casa.
                             </p>
                         </div>
                     </div>
-
-                    <div class="bg-[url(./static/img/bg-image/div3Bg.svg)] my-20 bg-cover bg-center w-full h-[294px] flex items-center justify-center relative">
-                        <div class="mx-auto flex items-center justify-center bg-white p-5 w-[400px] h-[162px] lg:w-[815px] border-l-[9px] border-[#FF0B53] absolute">
-                            <p class="text-[18px] lg:text-[25px] text-[#343434]">
-                                <span class="font-bold">
-                                    Estos efectos se trasladan también a las prácticas <br>
-                                    digitales.</span>  Muchas personas abandonan redes, restringen <br>
-                                    su presencia en línea o reducen drásticamente su <br>
-                                    participación pública como forma de autoprotección.
-                            </p>
+                    
+                    <div class="w-full h-[80vh] flex items-center justify-center">
+                        <div class="bg-[url(./static/img/bg-image/div3Bg.svg)] my-20 bg-cover bg-center w-full h-[294px] flex items-center justify-center relative">
+                            <div class="mx-auto flex items-center justify-center bg-white p-5 w-[400px] h-[162px] lg:w-[815px] border-l-[9px] border-[#FF0B53] absolute">
+                                <p class="text-[1.4375rem] lg:text-[1.5625rem] text-[#343434]">
+                                    <span class="font-bold">
+                                        Estos efectos se trasladan también a las prácticas 
+                                        digitales.</span>  Muchas personas abandonan redes, restringen 
+                                        su presencia en línea o reducen drásticamente su 
+                                        participación pública como forma de autoprotección.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -382,15 +397,15 @@
                 <div class="step" data-step="7">
 
                     <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-20">
-                        <p class="text-[18px] text-left text-[#0E1AFB]">
+                        <p class="text-[1.4375rem] text-left text-[#0E1AFB]">
                             La violencia digital trasciende las pantallas.
                         </p>
                 
                         <div class="flex flex-col lg:flex-row gap-10 items-center">
                 
-                            <p class="text-[18px] text-left text-[#343434]">
-                                Aparecen sentimientos de vulnerabilidad e inseguridad <br>
-                                vinculados al miedo de que las agresiones se extiendan al <br>
+                            <p class="text-[1.4375rem] text-left text-[#343434]">
+                                Aparecen sentimientos de vulnerabilidad e inseguridad 
+                                vinculados al miedo de que las agresiones se extiendan al 
                                 plano físico y presencial.
                             </p>
                 
@@ -398,12 +413,12 @@
                         </div>
                 
                         <div class="flex flex-col lg:flex-row gap-10 items-center mt-10">
-                            <p class="text-[18px] text-left text-[#343434]">
-                                Los efectos alcanzan también la vida social, laboral y material. <br>
-                                En varios relatos surge el temor a encontrarse con los <br>
-                                agresores en el espacio público, a ser perseguidas o vigiladas <br>
-                                fuera de internet. Estas situaciones se intensifican cuando <br>
-                                existe cercanía o conocimiento previo de quienes ejercieron las <br>
+                            <p class="text-[1.4375rem] text-left text-[#343434]">
+                                Los efectos alcanzan también la vida social, laboral y material. 
+                                En varios relatos surge el temor a encontrarse con los 
+                                agresores en el espacio público, a ser perseguidas o vigiladas 
+                                fuera de internet. Estas situaciones se intensifican cuando 
+                                existe cercanía o conocimiento previo de quienes ejercieron las 
                                 agresiones.
                             </p>
                 
@@ -417,11 +432,11 @@
                 <div class="step" data-step="8">
 
                     <div class="mx-auto w-[95%] lg:w-[50%] my-20">
-                            <p class="text-[18px] text-left text-[#343434]">
-                                Los datos muestran un patrón consistente: hoy, la mayoría de las personas no <br>
-                                cuenta con los conocimientos, herramientas ni apoyos institucionales <br>
-                                necesarios para prevenir o responder a la violencia de género digital. <br>
-                                Este déficit aparece tanto a nivel individual como en la posibilidad de activar <br>
+                            <p class="text-[1.4375rem] text-left text-[#343434]">
+                                Los datos muestran un patrón consistente: hoy, la mayoría de las personas no 
+                                cuenta con los conocimientos, herramientas ni apoyos institucionales 
+                                necesarios para prevenir o responder a la violencia de género digital. 
+                                Este déficit aparece tanto a nivel individual como en la posibilidad de activar 
                                 una denuncia efectiva.
                             </p>
                     </div>
@@ -430,17 +445,17 @@
                                 <div id="img-container-4" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                     
                                 </div>
-                                <div class="absolute top-[200px] left-[10px] md:top-[180px] md:top-[170px] md:left-[20px]">
-                                    <p class="text-[#FF0B53] text-[12px] md:text-[23px]">
-                                        Un <span class="text-[22px] md:text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">66%</span> afirma <br>
+                                <div class="absolute top-[200px] left-[0.625rem] md:top-[180px] md:top-[170px] md:left-[1.25rem]">
+                                    <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
+                                        Un <span class="text-[1.375rem] md:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">66%</span> afirma 
                                         <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                        no saber cómo <br>
-                                        denunciar o no estar <br>
-                                        segura/o sobre cuáles<br>
+                                        no saber cómo 
+                                        denunciar o no estar 
+                                        segura/o sobre cuáles
                                         son los canales 
-                                        </span> <br>
-                                        disponibles para <br>
-                                        reportar estas <br>
+                                        </span> 
+                                        disponibles para 
+                                        reportar estas 
                                         situaciones
                                     </p>
                                 </div>
@@ -451,48 +466,48 @@
                                 <div id="img-container-5" class="px-2 grid w-screen h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                     
                                 </div>
-                                <div class="absolute top-[210px] left-[10px] md:top-[80px] md:left-[290px]">
-                                    <p class="text-[#FF0B53] text-[12px] md:text-[23px]">
-                                        Un <span class="text-[22px] md:text-[40px] font-bold w-[86px] h-[66px] text-white bg-[#FF0B53]">62%</span>
+                                <div class="absolute top-[210px] left-[0.625rem] md:top-[80px] md:left-[290px]">
+                                    <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.4375rem]">
+                                        Un <span class="text-[1.375rem] md:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">62%</span>
                                         <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                        no realizó <br>
-                                        ninguna formación o <br>
+                                        no realizó 
+                                        ninguna formación o 
                                         capacitación
-                                        </span> en seguridad <br>
+                                        </span> en seguridad 
                                         digital en los últimos cinco años
                                     </p>
                                 </div>
                                     
                             </div>
-
-                            <div class="bg-[url(./static/img/bg-image/div4Bg.svg)] my-20 bg-cover bg-center w-full h-[294px] flex items-center justify-center relative">
-                                <div class="mx-auto flex items-center justify-center bg-white p-5 h-[164px] lg:w-[661px] border-l-[9px] border-[#FF0B53] absolute">
-                                    <p class="text-[18px] lg:text-[25px] text-[#343434]">
-                                        El resultado es un escenario preocupante: <br>
-                                        <span class="font-bold">
-                                            alta exposición cotidiana en entornos <br>
-                                            digitales y muy pocas herramientas de <br>
-                                            autoprotección disponibles o conocidas.
-                                    </p>
+                            
+                            <div class="w-full h-[80vh] flex items-center justify-center">
+                                <div class="bg-[url(./static/img/bg-image/div4Bg.svg)] my-20 bg-cover bg-center w-full h-[294px] flex items-center justify-center relative">
+                                    <div class="mx-auto flex items-center justify-center bg-white p-5 h-[164px] lg:w-[661px] border-l-[9px] border-[#FF0B53] absolute">
+                                        <p class="text-[1.4375rem] lg:text-[1.5625rem] text-[#343434]">
+                                            El resultado es un escenario preocupante: 
+                                            <span class="font-bold">
+                                                alta exposición cotidiana en entornos 
+                                                digitales y muy pocas herramientas de 
+                                                autoprotección disponibles o conocidas.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-
                     </div>
                 </div>
 
                 <div class="step" data-step="9">
 
                     <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Hacer de internet —y especialmente de las redes sociales— un <br>
-                            espacio más seguro no es una responsabilidad individual. <br>
-                            Los datos de Silencios Digitales muestran que, frente a la falta de recursos, <br>
-                            información y apoyos efectivos, las personas <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Hacer de internet —y especialmente de las redes sociales— un 
+                            espacio más seguro no es una responsabilidad individual. 
+                            Los datos de Silencios Digitales muestran que, frente a la falta de recursos, 
+                            información y apoyos efectivos, las personas 
                             demandan respuestas colectivas y estructurales.
                         </p>
                 
-                        <p class="text-[18px] text-left text-[#343434]">
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
                             Las medidas consideradas más útiles se organizan en tres niveles de acción.
                         </p>
                     </div>
@@ -504,22 +519,22 @@
                                 <div class="flex flex-col">
 
                                     <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                        <p class="text-[1.25rem] lg:text-[1.875rem] font-bold text-white p-0">
                                             <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#1</span>
                                             Responsabilidad de las plataformas
                                         </p>
                                     </div>  
 
-                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 w-[95%] lg:w-[50%] mx-auto mt-10">
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 w-[95%] lg:w-[50%] mx-auto">
 
-                                        <p class="mt-10 ml-10">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
+                                        <p class="ml-10">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
 
                                         <div class="mt-10 flex flex-col lg:flex-row gap-5 items-center justify-center">
-                                            <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">61,9%</span> 
+                                            <p class="text-[#DA4771] text-[1.4375rem]">Un <span class="font-bold text-[1.875rem]">61,9%</span> 
                                             <span class="font-bold">exige mayor 
-                                                <br> control, mejores canales <br>
-                                                de denuncia y respuestas más <br>
-                                                rápidas</span> y eficaces por parte <br>
+                                                 control, mejores canales 
+                                                de denuncia y respuestas más 
+                                                rápidas</span> y eficaces por parte 
                                                 de las plataformas digitales.</p>
 
                                                 <img src="./static/img/icons/build.svg" class="h-[210px] w-[210px]" alt="">
@@ -532,27 +547,27 @@
 
                                 <div class="flex flex-col">
                                     <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                        <p class="text-[1.25rem] lg:text-[1.875rem] font-bold text-white p-0">
                                             <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#2</span>
                                             Concientización y educación
                                         </p>
                                     </div>  
 
-                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto">
 
                                         <p class="mt-10 ml-10">La prevención aparece como una prioridad central.</p>
 
-                                        <div class="flex flex-col lg:flex-row gap-15 items-center justify-center my-10">
+                                        <div class="flex flex-col lg:flex-row gap-15 items-center justify-center">
                                             <div class="flex flex-col lg:flex-row gap-5 items-center justify-center">
                                                 
                                                 <img src="./static/img/icons/megaphone.svg" class="h-[154px] w-[154px]" alt="">
 
-                                                <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">65%</span> 
-                                                <span class="font-bold"> considera <br>
-                                                    necesarias campañas de <br>
-                                                    prevención </span> que visibilicen la <br>
-                                                    violencia digital de género y <br>
-                                                    brinden información clara y <br>
+                                                <p class="text-[#DA4771] text-[1.4375rem]">Un <span class="font-bold text-[1.875rem]">65%</span> 
+                                                <span class="font-bold"> considera 
+                                                    necesarias campañas de 
+                                                    prevención </span> que visibilicen la 
+                                                    violencia digital de género y 
+                                                    brinden información clara y 
                                                     accesible. 
                                                 </p>  
 
@@ -561,10 +576,10 @@
                                             <div class="flex flex-col lg:flex-row gap-5 justify-center">
 
                                                 <img src="./static/img/icons/pc.svg" alt="" class="h-[174px] w-[174px]">
-                                                <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">62%</span> 
-                                                    <span class="font-bold"> demanda <br>
-                                                        formación obligatoria en </span> <br>
-                                                        derechos y seguridad digital <br>
+                                                <p class="text-[#DA4771] text-[1.4375rem]">Un <span class="font-bold text-[1.875rem]">62%</span> 
+                                                    <span class="font-bold"> demanda 
+                                                        formación obligatoria en </span> 
+                                                        derechos y seguridad digital 
                                                         dentro del sistema educativo.
                                                 </p>
 
@@ -583,31 +598,31 @@
                                 <div class="flex flex-col">
 
                                     <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex justify-center">
-                                        <p class="text-[20px] lg:text-[30px] font-bold text-white p-0">
+                                        <p class="text-[1.25rem] lg:text-[1.875rem] font-bold text-white p-0">
                                             <span class="bg-[#0E1AFB] inline-flex items-center h-full px-3">#3</span>
                                             Fortalecimiento institucional y rol del Estado
                                         </p>
                                     </div>  
 
-                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto mt-10">
-                                        <p class="mt-10 ml-10">Las personas reclaman un Estado presente, con capacidad de respuesta.</p>
-                                        <div class="flex flex-col lg:flex-row gap-10 justify-center items-center my-10">
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto">
+                                        <p class="ml-10">Las personas reclaman un Estado presente, con capacidad de respuesta.</p>
+                                        <div class="flex flex-col lg:flex-row gap-10 justify-center items-center">
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
                                                 <img src="./static/img/icons/justice.svg" class="h-[174px] w-[174px]" alt="">
-                                                <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">62,4%</span> señala la
-                                                    <span class="font-bold"> <br>
-                                                        necesidad de leyes, organismos <br>
+                                                <p class="text-[#DA4771] text-[1.4375rem]">Un <span class="font-bold text-[1.875rem]">62,4%</span> señala la
+                                                    <span class="font-bold"> 
+                                                        necesidad de leyes, organismos 
                                                         especializados y mecanismos  
-                                                        <br>de seguimiento</span> de los casos.<br>
+                                                        de seguimiento</span> de los casos.
                                                 </p>   
                                             </div>
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
                                                 <img src="static/img/icons/hands.svg" class="h-[174px] w-[174px]" alt="">
-                                                <p class="text-[#DA4771] text-[18px]">Un <span class="font-bold text-[30px]">58,7%</span> 
-                                                    subraya <br> 
-                                                    la importancia de contar con <br>
-                                                    <span class="font-bold"> acceso gratuito a apoyo legal <br>
-                                                        y piscológico para quienes <br>
+                                                <p class="text-[#DA4771] text-[1.4375rem]">Un <span class="font-bold text-[1.875rem]">58,7%</span> 
+                                                    subraya  
+                                                    la importancia de contar con 
+                                                    <span class="font-bold"> acceso gratuito a apoyo legal 
+                                                        y piscológico para quienes 
                                                         atraviesan estas violencias. </span>
                                                 </p>  
                                             </div>
@@ -619,20 +634,20 @@
 
                     </div>
 
-                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 my-20" >
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Los datos son claros: la violencia de género digital desborda las capacidades <br>
+                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 mt-10 h-screen items-center justify-center" >
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Los datos son claros: la violencia de género digital desborda las capacidades 
                             individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
                         </p>
     
-                        <p class="text-[18px] text-left text-[#343434]">
-                            Se trata de un problema estructural que requiere políticas públicas sostenidas, <br>
-                            educación en derechos digitales y plataformas que asuman un rol activo en la <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434]">
+                            Se trata de un problema estructural que requiere políticas públicas sostenidas, 
+                            educación en derechos digitales y plataformas que asuman un rol activo en la 
                             prevención, la protección y la reparación del daño.
                         </p>
     
-                        <p class="text-[18px] text-left text-[#343434] font-bold">
-                            Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— <br>
+                        <p class="text-[1.4375rem] text-left text-[#343434] font-bold">
+                            Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— 
                             es el primer paso para romper los silencios digitales.
                         </p>
                 
@@ -722,17 +737,43 @@
 
 <script>
 
+let typingTimeout;
+let isTyping = false;
+
+function typeWriter(text, speed = 25) {
+
+  // detener animación anterior
+  clearTimeout(typingTimeout);
+  isTyping = true;
+
+  navbarText.textContent = "";
+  let i = 0;
+
+  function typing() {
+    if (i < text.length) {
+      navbarText.textContent += text.charAt(i);
+      i++;
+      typingTimeout = setTimeout(typing, speed);
+    } else {
+      isTyping = false;
+    }
+  }
+
+  typing();
+}
+
+
 const scroller = scrollama();
 const navbarText = document.getElementById("navbar-text");
 
 const textByStep = {
-  3: "Reconocer la violencia: lo que muestran los datos |",
-  4: "Pasamos cada vez más tiempo en internet |",
-  5: "Autocensura: habitar internet calculando riesgos|",
-  6: "La violencia digital tiene efectos reales|",
-  7: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana |",
-  8: "Mucha exposición, pocas herramientas |",
-  9: "Reconocer la violencia: lo que muestran los datos |"
+  3: "Reconocer la violencia: lo que muestran los datos",
+  4: "Pasamos cada vez más tiempo en internet",
+  5: "Autocensura: habitar internet calculando riesgos",
+  6: "La violencia digital tiene efectos reales",
+  7: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana",
+  8: "Mucha exposición, pocas herramientas",
+  9: "Reconocer la violencia: lo que muestran los datos"
 
 };
 
@@ -766,10 +807,10 @@ scroller
       navbar.classList.remove("opacity-100");
     }
 
-    // cambiar texto
     if (textByStep[stepNumber]) {
-      navbarText.textContent = textByStep[stepNumber];
+        typeWriter(textByStep[stepNumber]);
     }
+
   })
   .onStepExit(response => {
     if (response.direction === "up") {
@@ -777,8 +818,8 @@ scroller
       updateNavbarActive(prevStep);
 
       if (textByStep[prevStep]) {
-        navbarText.textContent = textByStep[prevStep];
-      }
+        typeWriter(textByStep[prevStep]);
+        }
     }
   });
 
@@ -839,7 +880,7 @@ const observer = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-    rootMargin: "-45% 0px -40% 0px"
+    rootMargin: "-60% 0px -60% 0px"
   }
 );
 
@@ -851,7 +892,7 @@ function openAccordion(activeItem) {
     if (!content) return;
 
     if (item === activeItem) {
-        content.style.height = "500px";
+        content.style.height = "80vh",
         content.style.opacity = "1";
         } else {
         content.style.height = "0px";

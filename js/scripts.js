@@ -1,7 +1,7 @@
 function peopleAnimation({
   containerId,
   ratio = 0.5,
-  yellowClass = "bg-[#F6F4F1]",
+  yellowClass = "bg-white",
   whiteClass = "bg-white",
   imgPath = "./static/img",
   imgPrefix = "P",
