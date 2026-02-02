@@ -32,7 +32,7 @@
         <section id="scrolly">
             <article class="relative" id="bg-texture">
                 
-                <div id="navbar" class="h-[89px] w-[95%] mt-2 lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none shadow-lg">
+                <div id="navbar" class="h-[89px] w-[95%] lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none shadow-lg">
                     <div class="h-[1.875rem] flex border-[#000000] rounded-t-lg relative" style="border: 0.3px solid;">
 
                         <ul class="flex h-full items-center gap-1 md:gap-5 left-[0.625rem] lg:left-[110px] absolute">
@@ -75,7 +75,7 @@
 
                     <div class="bg-[url(./static/img/bg-image/navbarBg.svg)] bg-cover bg-no-repeat bg-center h-[59px] flex items-center justify-center z-1">
                         <div class="flex justify-between items-center bg-white rounded-lg h-[43px] w-[95%] lg:w-[80%] shadow-2xl z-10 px-2 md:px-5">
-                            <p class="text-[0.6rem] lg:text-[1.5625rem] font-bold">
+                            <p class="text-[0.8rem] lg:text-[1.5625rem] font-bold">
                                 <span id="navbar-text"></span>
                                 <span id="cursor"></span>
                             </p>                            
@@ -506,7 +506,7 @@
 
                     <div class="flex flex-col w-screen mt-5">
 
-                        <ul id="accordion">
+                        <ul id="accordion" class="">
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">
 
@@ -519,7 +519,7 @@
 
                                     <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-10 items-center justify-center w-[95%] md:w-screen">
 
-                                        <p class="text-[1.2rem] md:text-[1.4375rem]">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
+                                        <p class="mt-10 text-[1.2rem] md:text-[1.4375rem]">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
 
                                         <div class="mt-10 flex flex-col lg:flex-row gap-5 justify-center items-center">
                                             <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[35rem]">Un <span class="font-bold text-[1.875rem]">61,9%</span> 
@@ -587,7 +587,6 @@
                                 </div>
                             </li>
                             <li class="accordion-item">
-
                                 <div class="flex flex-col items-center justify-center">                                    
                                     <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex text-[1.25rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
                                         <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#3</span>
@@ -626,25 +625,27 @@
 
                     </div>
 
-                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 mt-10 h-screen items-center justify-center" >
-                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
-                            Los datos son claros: la violencia de género digital desborda las capacidades 
-                            individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
-                        </p>
-    
-                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
-                            Se trata de un problema estructural que requiere políticas públicas sostenidas, 
-                            educación en derechos digitales y plataformas que asuman un rol activo en la 
-                            prevención, la protección y la reparación del daño.
-                        </p>
-    
-                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] font-bold">
-                            Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— 
-                            es el primer paso para romper los silencios digitales.
-                        </p>
-                
-    
-                    </div>
+                    
+                </div>
+
+                <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 mt-10 h-screen items-center justify-center" >
+                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
+                        Los datos son claros: la violencia de género digital desborda las capacidades 
+                        individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
+                    </p>
+
+                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
+                        Se trata de un problema estructural que requiere políticas públicas sostenidas, 
+                        educación en derechos digitales y plataformas que asuman un rol activo en la 
+                        prevención, la protección y la reparación del daño.
+                    </p>
+
+                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] font-bold">
+                        Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— 
+                        es el primer paso para romper los silencios digitales.
+                    </p>
+            
+
                 </div>
                                 
             </article>
@@ -860,54 +861,46 @@ function updateNavbarActive(stepNumber) {
 <script>
 
 const accordionItems = document.querySelectorAll(".accordion-item");
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        openAccordion(entry.target);
-      }
-    });
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "50% 0px 50% 0px"
-  }
-);
-
-accordionItems.forEach(item => observer.observe(item));
-
-// function openAccordion(activeItem) {
-//   accordionItems.forEach(item => {
-//     const content = item.querySelector(".accordion-content");
-//     if (!content) return;
-
-//     if (item === activeItem) {
-//         content.style.height = "85vh",
-//         content.style.opacity = "1";
-//         } else {
-//         content.style.height = "0px";
-//         content.style.opacity = "0";
-//         }
-
-//   });
-// }
-function openAccordion(activeItem) {
-  accordionItems.forEach(item => {
-    const content = item.querySelector(".accordion-content");
-    if (!content) return;
-
-    if (item === activeItem) {
-      content.style.height = "100vh";
-      content.style.opacity = "1";
-    } else {
-      content.style.height = "0px";
-      content.style.opacity = "0";
+  
+    // 👉 abrir el primero al cargar
+    if (accordionItems.length > 0) {
+      openAccordion(accordionItems[0]);
     }
-  });
-}
+  
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            openAccordion(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: "-45%"
+      }
+    );
+  
+    accordionItems.forEach(item => observer.observe(item));
+  
+    function openAccordion(activeItem) {
+    accordionItems.forEach(item => {
+        const content = item.querySelector(".accordion-content");
+        if (!content) return;
 
+        if (item === activeItem) {
+        // reset primero para recalcular bien
+        content.style.height = "auto";
+        const h = content.scrollHeight;
+        content.style.height = h + "px";
+        content.style.opacity = "1";
+        } else {
+        content.style.height = "0px";
+        content.style.opacity = "0";
+        }
+    });
+    }
 
 </script>
 
