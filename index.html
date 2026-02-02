@@ -800,30 +800,9 @@ scroller
     offset: scrollerOffset,
     progress: true
   })
-  .onStepProgress(response => {
+  .onStepEnter(response => {
 
     const stepNumber = Number(response.element.dataset.step);
-
-    // Accordions
-    if (stepNumber === 9) {
-        const accordionItems = document.querySelectorAll(".accordion-item");
-        const gap = 0.1
-
-        const step9 = document.querySelector("#accordion-step").getBoundingClientRect().height;        
-        const threshold = scrollerOffset * window.innerHeight / step9;
-        const delta = (1 - threshold - gap) / 3;
-        let activeIdx = 0;
-
-        if (response.progress > threshold + 2 * delta) {
-            activeIdx = 2;
-        } else if (response.progress > threshold + delta) {
-            activeIdx = 1;
-        } else if (response.progress > threshold) {
-            activeIdx = 0;
-        }
-
-        openAccordion(activeIdx);
-    }
 
     // limpiar steps activos
     document.querySelectorAll(".step").forEach(step => {
@@ -848,7 +827,31 @@ scroller
     if (textByStep[stepNumber]) {
         typeWriter(textByStep[stepNumber]);
     }
+  })
+  .onStepProgress(response => {
 
+    const stepNumber = Number(response.element.dataset.step);
+
+    // Accordions
+    if (stepNumber === 9) {
+        const accordionItems = document.querySelectorAll(".accordion-item");
+        const gap = 0.1
+
+        const step9 = document.querySelector("#accordion-step").getBoundingClientRect().height;        
+        const threshold = scrollerOffset * window.innerHeight / step9;
+        const delta = (1 - threshold - gap) / 3;
+        let activeIdx = 0;
+
+        if (response.progress > threshold + 2 * delta) {
+            activeIdx = 2;
+        } else if (response.progress > threshold + delta) {
+            activeIdx = 1;
+        } else if (response.progress > threshold) {
+            activeIdx = 0;
+        }
+
+        openAccordion(activeIdx);
+    }
   })
   .onStepExit(response => {
     if (response.direction === "up") {
