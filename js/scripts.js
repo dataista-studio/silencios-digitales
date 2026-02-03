@@ -304,7 +304,7 @@ function peopleAnimation({
       obs.unobserve(container); // 👈 anima solo una vez
     },
     {
-      threshold: 0.75,
+      threshold: 0.5,
     }
   );
   
