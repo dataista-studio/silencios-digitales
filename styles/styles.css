@@ -1,18 +1,6 @@
-.step {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: none;
-  }
-  
-  .step.is-active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-/* 
-  .accordion-content {
-    overflow: hidden;
-    transition: height 0.4s ease, opacity 0.3s ease;
-  } */
-  
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
