@@ -418,7 +418,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/hombrepanic.avif" type="image/avif">
                                 <source srcset="./build/img/elements/hombrepanic.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/hombrepanic.png" alt="Hombre en pánico" class="w-max h-[250px] md:h-[340px]">
+                                <img loading="lazy" src="./build/img/elements/hombrepanic.png" alt="Hombre en pánico" class="w-[264px] h-auto">
                             </picture>
                 
                             <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[30rem] ">
@@ -431,7 +431,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/mujerestrés.avif" type="image/avif">
                                 <source srcset="./build/img/elements/mujerestrés.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/mujerestrés.png" alt="Mujer estresada" class="w-max h-[250px] md:h-[340px]">
+                                <img loading="lazy" src="./build/img/elements/mujerestrés.png" alt="Mujer estresada" class="w-[264px] h-auto">
                             </picture>
                             
                             <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[30rem] ">
@@ -940,29 +940,15 @@ function getStepNumber(responseNumber) {
 scroller
   .setup({
     step: ".step",
-    offset: scrollerOffset,
-    progress: true
-  })
+    offset: scrollerOffset
+})
   .onStepEnter(response => {
 
     const stepNumber = getStepNumber(Number(response.element.dataset.step));
-    console.log(stepNumber)
 
     allSteps.style("opacity", d => d === stepNumber ? 1 : 0)
         .classed("active", d => d === stepNumber)
         .classed("inactive", d => d !== stepNumber);
-        
-
-    // limpiar steps activos
-    // document.querySelectorAll(".step").forEach(step => {
-    //   step.classList.remove("is-active");
-    // });
-
-    // activar step actual
-    // response.element.classList.add("is-active");
-
-    // actualizar navbar activo
-    updateNavbarActive(stepNumber);
 
     // mostrar / ocultar navbar
     if (stepNumber > 1) {
@@ -972,6 +958,9 @@ scroller
       navbar.classList.add("opacity-0", "pointer-events-none");
       navbar.classList.remove("opacity-100");
     }
+
+    // actualizar navbar activo
+    updateNavbarActive(stepNumber);
 
     const newText = getTextForStep(stepNumber);
 
@@ -985,33 +974,7 @@ scroller
     }
 
   })
-  .onStepProgress(response => {
-
-    const stepNumber = getStepNumber(Number(response.element.dataset.step));
-
-    // Accordions
-    if (stepNumber === 9) {
-        const accordionItems = document.querySelectorAll(".accordion-item");
-        const gap = 0.1
-
-        const step9 = document.querySelector("#accordion-step").getBoundingClientRect().height;        
-        const threshold = scrollerOffset * window.innerHeight / step9;
-        const delta = (1 - threshold - gap) / 3;
-        let activeIdx = 0;
-
-        if (response.progress > threshold + 2 * delta) {
-            activeIdx = 2;
-        } else if (response.progress > threshold + delta) {
-            activeIdx = 1;
-        } else if (response.progress > threshold) {
-            activeIdx = 0;
-        }
-
-        openAccordion(activeIdx);
-    }
-  })
   .onStepExit(response => {
-    console.log(response)
     if (response.direction === "up") {
 
         const prevStep = getStepNumber(Number(response.element.dataset.step)) - 1;
@@ -1033,7 +996,7 @@ scroller
 
 function getIconForStep(step) {
   const range = textRanges.findIndex(r => step >= r.from && step <= r.to);
-  return range ? range : null;
+  return range !== -1 ? range : null;
 }
 
 const navItems = document.querySelectorAll(".nav-item");
