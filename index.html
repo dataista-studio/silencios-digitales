@@ -25,11 +25,9 @@
     <main>
 
         <div id="loader">
-            <video autoplay muted loop playsinline>
-              <source src="./static/movie/animacion.mp4" type="video/mp4">
-              Tu navegador no soporta video.
-            </video>
+            <video id="loaderVideo" autoplay muted loop playsinline></video>
         </div>
+          
 
         <section id="scrolly">
             <article class="relative" id="bg-texture">
@@ -1005,16 +1003,35 @@ function updateNavbarActive(stepNumber) {
 
 <script>
     document.body.classList.add("loading");
-
+  
+    const video = document.getElementById("loaderVideo");
+    const loader = document.getElementById("loader");
+  
+    // Detectar tamaño apenas se ejecuta el script
+    const width = window.innerWidth;
+    let src = "";
+  
+    if (width <= 767) {
+      src = "./build/movie/mobile.mp4";
+    } 
+    else if (width <= 1024) {
+      src = "./build/movie/tablet.mp4";
+    } 
+    else {
+      src = "./build/movie/desktop.mp4";
+    }
+  
+    // Asignar video para que se reproduzca DURANTE la carga
+    video.innerHTML = `<source src="${src}" type="video/mp4">`;
+    video.load();
+  
+    // Cuando la página termina de cargar → ocultar loader
     window.addEventListener("load", () => {
-        const loader = document.getElementById("loader");
-
-        setTimeout(() => {
-            loader.classList.add("hidden");
-            document.body.classList.remove("loading");
-        }, 500);
-
+      setTimeout(() => {
+        loader.classList.add("hidden");
+        document.body.classList.remove("loading");
+      }, 500);
     });
+  </script>
 
-</script>
 </html
