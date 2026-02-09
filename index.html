@@ -86,9 +86,10 @@
 
                 </div>
 
-                <div class="step-home h-screen w-screen flex flex-col items-center justify-center p-5 relative bg-[image-set(url('./build/img/bg-image/bgSmartPhone.avif')_type('image/avif'),url('./build/img/bg-image/bgSmartPhone.webp')_type('image/webp'),url('./build/img/bg-image/bgSmartPhone.png')_type('image/png'))]
+                <div class="step-home step-display h-screen w-screen flex flex-col items-center justify-center p-5 relative bg-[image-set(url('./build/img/bg-image/bgSmartPhone.avif')_type('image/avif'),url('./build/img/bg-image/bgSmartPhone.webp')_type('image/webp'),url('./build/img/bg-image/bgSmartPhone.png')_type('image/png'))]
                     sm:bg-[image-set(url('./build/img/bg-image/bgTablet.avif')_type('image/avif'),url('./build/img/bg-image/bgTablet.webp')_type('image/webp'),url('./build/img/bg-image/bgTablet.png')_type('image/png'))]
-                    md:bg-[image-set(url('./build/img/bg-image/bgDesktop.avif')_type('image/avif'),url('./build/img/bg-image/bgDesktop.webp')_type('image/webp'),url('./build/img/bg-image/bgDesktop.png')_type('image/png'))] bg-cover bg-no-repeat bg-center step-display" data-step="1">
+                    md:bg-[image-set(url('./build/img/bg-image/bgDesktop.avif')_type('image/avif'),url('./build/img/bg-image/bgDesktop.webp')_type('image/webp'),url('./build/img/bg-image/bgDesktop.png')_type('image/png'))] bg-cover bg-no-repeat bg-center"
+                    data-step="1" style="opacity: 1;">
                     
                     <div class="flex flex-col items-center justify-between h-[60vh]">
                         <div class="w-max h-max">
@@ -442,7 +443,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
                     <div class="w-full h-[80vh] flex items-center justify-center">
                         <div class="bg-[url(./build/img/bg-image/div3Bg.svg)] bg-cover bg-center w-screen md:w-full h-[294px] flex items-center justify-center relative">
@@ -580,7 +581,7 @@
 
                 </div>
 
-                <div class="step-display max-h-dvh" id="accordion-step" data-step="11">
+                <div class="step-display" id="accordion-step" data-step="11">
 
                     <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto">
 
@@ -599,10 +600,13 @@
                         </div>
                         
                     </div>
+                </div>
+
+                <div class="step-display" id="accordion-step">
 
                     <div class="flex flex-col w-screen h-[200vh] relative" id="accordion-wrapper">
 
-                        <ul id="accordion" class="sticky top-[25vh]">
+                        <ul id="accordion" class="sticky top-[15vh]">
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">
 
@@ -613,7 +617,8 @@
                                         </p>
                                     </div>  
 
-                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-10 justify-center w-[95%] md:w-[50%]">
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out opacity-0 flex flex-col gap-10 justify-center w-[95%] md:w-[50%]"
+                                    style="height: fit-content;">
 
                                         <p class="mt-10 text-[1.2rem] md:text-[1.4375rem] text-left">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
 
@@ -855,7 +860,7 @@ function typeWriter(text, speed = 25) {
 
 // STEP
 const allSteps = d3.selectAll(".step-display");
-const nSteps = allSteps._groups[0].length;
+const nSteps = allSteps._groups[0].length + 2; // +2 para acordeon
 const intSteps = d3.range(0, nSteps);
 
 const steps = allSteps.data(intSteps);
@@ -883,17 +888,17 @@ const navbarText = document.getElementById("navbar-text");
 // };
 
 const textRanges = [
-  { from: 3, to: 4, text: "Reconocer la violencia: lo que muestran los datos" },
-  { from: 5, to: 5, text: "Pasamos cada vez más tiempo en internet" },
-  { from: 6, to: 6, text: "Autocensura: habitar internet calculando riesgos" },
+  { from: 2, to: 6, text: "Reconocer la violencia: lo que muestran los datos" },
+  { from: 7, to: 8, text: "Pasamos cada vez más tiempo en internet" },
+  { from: 9, to: 11, text: "Autocensura: habitar internet calculando riesgos" },
 
   // 👇 rango intermedio que mantiene texto
-  { from: 7, to: 7, text: "La violencia digital tiene efectos reales" },
-  { from: 8, to:8, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
-  { from: 9, to: 10, text: "Mucha exposición, pocas herramientas" },
+  { from: 12, to: 13, text: "La violencia digital tiene efectos reales" },
+  { from: 14, to: 14, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
+  { from: 15, to: 18, text: "Mucha exposición, pocas herramientas" },
 
   // 👇 vuelve al inicial
-  { from: 11, to: 11, text: "Reconocer la violencia: lo que muestran los datos" }
+  { from: 19, to: 25, text: "Reconocer la violencia: lo que muestran los datos" }
 ];
 
 function getTextForStep(step) {
@@ -916,10 +921,20 @@ function openAccordion(activeIdx) {
             content.style.height = h + "px";
             content.style.opacity = "1";
         } else {
-            content.style.height = "0px";
+            content.style.height = "0";
             content.style.opacity = "0";
         }
     });
+}
+
+function getStepNumber(responseNumber) {
+    if (responseNumber > 22) {
+        return responseNumber - 2
+    } else if (responseNumber > 19) {
+        return 20
+    } else {
+        return responseNumber
+    }
 }
 
 scroller
@@ -930,7 +945,7 @@ scroller
   })
   .onStepEnter(response => {
 
-    const stepNumber = Number(response.element.dataset.step);
+    const stepNumber = getStepNumber(Number(response.element.dataset.step));
     console.log(stepNumber)
 
     allSteps.style("opacity", d => d === stepNumber ? 1 : 0)
@@ -950,7 +965,7 @@ scroller
     updateNavbarActive(stepNumber);
 
     // mostrar / ocultar navbar
-    if (stepNumber > 2) {
+    if (stepNumber > 1) {
       navbar.classList.remove("opacity-0", "pointer-events-none");
       navbar.classList.add("opacity-100");
     } else {
@@ -964,11 +979,15 @@ scroller
         typeWriter(newText);
     }
 
+    if (stepNumber === 20) {
+        const diff = Number(response.element.dataset.step) - stepNumber;
+        openAccordion(diff);
+    }
+
   })
   .onStepProgress(response => {
 
-    const stepNumber = Number(response.element.dataset.step);
-    console.log('progres', stepNumber)
+    const stepNumber = getStepNumber(Number(response.element.dataset.step));
 
     // Accordions
     if (stepNumber === 9) {
@@ -995,13 +1014,13 @@ scroller
     console.log(response)
     if (response.direction === "up") {
 
-        const prevStep = Number(response.element.dataset.step) - 1;
+        const prevStep = getStepNumber(Number(response.element.dataset.step)) - 1;
         updateNavbarActive(prevStep);
 
         const newText = getTextForStep(prevStep);
 
         if (newText && navbarText.textContent !== newText) {
-        typeWriter(newText);
+            typeWriter(newText);
         }
 
     }
@@ -1012,12 +1031,17 @@ scroller
 
 <script>
 
+function getIconForStep(step) {
+  const range = textRanges.findIndex(r => step >= r.from && step <= r.to);
+  return range ? range : null;
+}
+
 const navItems = document.querySelectorAll(".nav-item");
 
-navItems.forEach(item => {
+navItems.forEach((item, idx) => {
   item.addEventListener("click", () => {
     const stepNumber = item.dataset.step;
-    const targetStep = document.querySelector(`.step[data-step="${stepNumber}"]`);
+    const targetStep = document.querySelector(`.step[data-step="${textRanges[idx].from}"]`);
 
     if (targetStep) {
       targetStep.scrollIntoView({
@@ -1029,11 +1053,10 @@ navItems.forEach(item => {
 });
 
 function updateNavbarActive(stepNumber) {
-  navItems.forEach(item => {
+  navItems.forEach((item, idx) => {
     const icon = item.querySelector(".nav-icon");
-    const itemStep = Number(item.dataset.step);
 
-    if (itemStep === stepNumber) {
+    if (idx === getIconForStep(stepNumber)) {
       item.classList.add("bg-[#0E1AFB]", "scale-105");
       item.classList.remove("bg-white");
 
