@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp-test": "gulp test"
+    "gulp-images": "gulp Images"
   },
   "author": "Dataista",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "gulp": "^5.0.1"
+    "glob": "^13.0.1",
+    "gulp": "^5.0.1",
+    "gulp-webp": "^5.1.0",
+    "sharp": "^0.34.5"
   }
 }

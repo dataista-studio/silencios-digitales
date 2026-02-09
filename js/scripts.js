@@ -118,7 +118,13 @@ function peopleAnimation({
         const prefix =
           type === "image" ? imgPrefix : blueImagePrefix;
 
-        cell.style.backgroundImage = `url("${imgPath}/${prefix}${imgIndex}.jpg")`;
+        // cell.style.backgroundImage = `url("${imgPath}/${prefix}${imgIndex}.jpg")`;
+        cell.style.backgroundImage = `
+          image-set(
+            url("${imgPath}/${prefix}${imgIndex}.avif") type("image/avif"),
+            url("${imgPath}/${prefix}${imgIndex}.webp") type("image/webp"),
+            url("${imgPath}/${prefix}${imgIndex}.jpg") type("image/jpeg")
+          )`;
         cell.style.backgroundSize = "cover";
         cell.style.backgroundPosition = "center";
         cell.style.backgroundRepeat = "no-repeat";
