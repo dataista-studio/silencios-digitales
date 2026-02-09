@@ -30,7 +30,7 @@
           
 
         <section id="scrolly">
-            <article class="relative" id="bg-texture">
+            <article class="relative wrapper" id="bg-texture">
                 
                 <div id="navbar" class="bg-[#F6F4F1] h-[89px] w-[100%] lg:w-[80%] mx-auto bg-white fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-500 opacity-0 pointer-events-none shadow-lg">
                     <div class="h-[1.875rem] flex border-[#000000] rounded-t-lg relative" style="border: 0.3px solid;">
@@ -84,9 +84,10 @@
 
                 </div>
 
-                <div class="h-screen w-screen flex flex-col items-center justify-center p-5 relative bg-[image-set(url('./build/img/bg-image/bgSmartPhone.avif')_type('image/avif'),url('./build/img/bg-image/bgSmartPhone.webp')_type('image/webp'),url('./build/img/bg-image/bgSmartPhone.png')_type('image/png'))]
+                <div class="step-home step-display h-screen w-screen flex flex-col items-center justify-center p-5 relative bg-[image-set(url('./build/img/bg-image/bgSmartPhone.avif')_type('image/avif'),url('./build/img/bg-image/bgSmartPhone.webp')_type('image/webp'),url('./build/img/bg-image/bgSmartPhone.png')_type('image/png'))]
                     sm:bg-[image-set(url('./build/img/bg-image/bgTablet.avif')_type('image/avif'),url('./build/img/bg-image/bgTablet.webp')_type('image/webp'),url('./build/img/bg-image/bgTablet.png')_type('image/png'))]
-                    md:bg-[image-set(url('./build/img/bg-image/bgDesktop.avif')_type('image/avif'),url('./build/img/bg-image/bgDesktop.webp')_type('image/webp'),url('./build/img/bg-image/bgDesktop.png')_type('image/png'))] bg-cover bg-no-repeat bg-center step" data-step="1">
+                    md:bg-[image-set(url('./build/img/bg-image/bgDesktop.avif')_type('image/avif'),url('./build/img/bg-image/bgDesktop.webp')_type('image/webp'),url('./build/img/bg-image/bgDesktop.png')_type('image/png'))] bg-cover bg-no-repeat bg-center"
+                    data-step="1" style="opacity: 1;">
                     
                     <div class="flex flex-col items-center justify-between h-[60vh]">
                         <div class="w-max h-max">
@@ -108,7 +109,7 @@
             
                 </div>
 
-                <div class="flex flex-col gap-10 items-center w-screen h-screen mx-auto step mt-10" data-step="2">
+                <div class="step-home flex flex-col gap-10 items-center w-screen h-screen mx-auto step-display" data-step="2">
                     <h2 class="text-[#FF0B53] font-bold text-[1.875rem] text-center">¿Qué es la violencia digital de género?</h2>
                     
                     <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-10 leading-[1.2]"> 
@@ -155,7 +156,7 @@
                     
                 </div>
 
-                <div class="flex flex-col gap-10 items-center w-screen mx-auto step mt-10" data-step="3">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="3">
                     
                     <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-10 h-[500px]"> 
                         <div class="md:max-w-[48rem] flex flex-col gap-6 leading-[1.2]">
@@ -186,6 +187,9 @@
                         </div>
 
                     </div>
+                </div>
+
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
 
                     <div class="flex items-center">
                         <div class="relative">
@@ -216,17 +220,18 @@
                                 
                         </div>
                     </div>
+                </div>
+
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
 
                     <div class="px-2 md:px-0">
                         <p class="font-bold text-[1.3rem] md:text-[1.5625rem] text-center my-30">Sin embargo, cuando se indagó a 
                             partir de situaciones concretas</p>
                     </div>
-
-                    
                     
                 </div>
 
-                <div class="flex flex-col gap-10 items-center w-screen mx-auto step mt-10" data-step="4">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="4">
 
                     <div class="flex items-center">
                         <div class="relative">
@@ -246,6 +251,9 @@
                                 
                         </div>
                     </div>
+                </div>
+                    
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
 
                     <div class="w-screen h-[80vh] flex items-center justify-center">
                         <div class="bg-[url(./build/img/bg-image/div1Bg.svg)] my-5 bg-cover bg-center w-screen  h-[130px] md:h-[330px] flex items-center justify-center relative">
@@ -261,7 +269,7 @@
 
                 </div>
 
-                <div class="flex flex-col gap-10 items-center w-screen h-screen mx-auto step mt-10 relative" data-step="5">
+                <div class="flex flex-col gap-10 items-center w-screen h-screen mx-auto step-display relative">
                     <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-10">
 
                         <div class="md:max-w-[48rem] flex flex-col gap-6">
@@ -287,9 +295,12 @@
                         <source srcset="./build/img/elements/icons.webp" type="image/webp">
                         <img loading="lazy" src="./build/img/elements/icons.png" alt="Íconos redes sociales" class="h-0 w-0 md:w-[255px] md:h-[396px] absolute left-[75vw] bg-cover">
                     </picture>
+                </div>
 
-                    <div class="w-screen h-[40vh] flex items-center justify-center mt-16">
-                        <div class="bg-[url(./build/img/bg-image/div2Bg.svg)] bg-cover w-screen h-[294px] flex items-center justify-center relative mt-10">
+                <div class="flex flex-col gap-10 items-center w-screen h-screen mx-auto step-display relative">
+
+                    <div class="w-screen h-[40vh] flex items-center justify-center ">
+                        <div class="bg-[url(./build/img/bg-image/div2Bg.svg)] bg-cover w-screen h-[294px] flex items-center justify-center relative">
                             <div class="mx-auto flex items-center justify-center bg-white p-1 md:p-5 md:h-[203px] w-[250px] md:w-[400px] border-l-[9px] border-[#FF0B53] absolute top-[100px] md:top-[85px]">
                                 <p class="text-center text-[1.1rem] md:text-[1.5625rem] text-[#343434]">
                                     La pregunta es inevitable:  
@@ -303,7 +314,7 @@
                     </div>
                 </div>
 
-                <div class="step flex flex-col gap-10 items-center w-screen mx-auto step mt-5 mb-10" data-step="6">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="6">
 
                     <div class="flex flex-col justify-center md:justify-start w-[95%] md:w-[50%] gap-10">
                         <div class="my-15">
@@ -314,7 +325,9 @@
 
                         </div>
                     </div>
+                </div>
 
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
                     <div class="h-full flex items-center">            
                         <div class="relative">
                             <div id="img-container-3" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
@@ -334,9 +347,11 @@
                                 
                         </div>
                     </div>
+                </div>
 
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
                     <div class="flex flex-col justify-center w-[95%] md:w-[60%] gap-10">
-                        <p class="text-[1.2rem] md:text-[1.4375rem] text-center text-[#343434] my-20">
+                        <p class="text-[1.2rem] md:text-[1.4375rem] text-center text-[#343434] mb-10">
                             Entre los principales motivos para limitar lo que se publica se repiten patrones claros:
                         </p>
                     </div>
@@ -390,8 +405,8 @@
                     </div>
                 </div>
 
-                <div class="step flex flex-col gap-10 items-center w-screen mx-auto step my-10" data-step="7">
-                    <div class="flex flex-col gap-20 flex-start w-[95%] lg:w-[50%] mx-auto mt-10 leading-[1.2]">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="7">
+                    <div class="flex flex-col gap-20 flex-start w-[95%] lg:w-[50%] mx-auto leading-[1.2]">
                         <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[48rem] ">
                             La violencia digital de género no es abstracta ni simbólica. 
                             Tiene impactos concretos y profundos en la vida de las personas.
@@ -401,7 +416,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/hombrepanic.avif" type="image/avif">
                                 <source srcset="./build/img/elements/hombrepanic.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/hombrepanic.png" alt="Hombre en pánico" class="w-max h-[250px] md:h-[340px]">
+                                <img loading="lazy" src="./build/img/elements/hombrepanic.png" alt="Hombre en pánico" class="w-[264px] h-auto">
                             </picture>
                 
                             <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[30rem] ">
@@ -414,7 +429,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/mujerestrés.avif" type="image/avif">
                                 <source srcset="./build/img/elements/mujerestrés.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/mujerestrés.png" alt="Mujer estresada" class="w-max h-[250px] md:h-[340px]">
+                                <img loading="lazy" src="./build/img/elements/mujerestrés.png" alt="Mujer estresada" class="w-[264px] h-auto">
                             </picture>
                             
                             <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[30rem] ">
@@ -425,8 +440,11 @@
                             </p>
                         </div>
                     </div>
+                </div>
+
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
                     <div class="w-full h-[80vh] flex items-center justify-center">
-                        <div class="bg-[url(./build/img/bg-image/div3Bg.svg)] my-10 bg-cover bg-center w-screen md:w-full h-[294px] flex items-center justify-center relative">
+                        <div class="bg-[url(./build/img/bg-image/div3Bg.svg)] bg-cover bg-center w-screen md:w-full h-[294px] flex items-center justify-center relative">
                             <div class="mx-auto flex items-center justify-center bg-white p-2 md:p-5 w-[300px] md:w-[400px] md:h-[162px] lg:w-[815px] border-l-[9px] border-[#FF0B53] absolute">
                                 <p class="text-[1rem] lg:text-[1.5625rem] text-[#343434]">
                                     <span class="font-bold">
@@ -440,7 +458,7 @@
                     </div>
                 </div>
 
-                <div class="step flex flex-col gap-10 items-center w-screen mx-auto step mt-5 mb-10" data-step="8">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display mt-5 mb-10" data-step="8">
 
                     <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-10">
                         <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#0E1AFB]">
@@ -458,7 +476,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/persona_compu.avif" type="image/avif">
                                 <source srcset="./build/img/elements/persona_compu.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/persona_compu.png" alt="Persona en computador" class="w-max h-[300px] md:h-[350px]">
+                                <img loading="lazy" src="./build/img/elements/persona_compu.png" alt="Persona en computador" class="w-max h-auto">
                             </picture>
                             
                         </div>
@@ -476,7 +494,7 @@
                             <picture>
                                 <source srcset="./build/img/elements/persona_celu.avif" type="image/avif">
                                 <source srcset="./build/img/elements/persona_celu.webp" type="image/webp">
-                                <img loading="lazy" src="./build/img/elements/persona_celu.png" alt="Persona en celular chateando" class="w-max h-[170px] md:h-[200px]">
+                                <img loading="lazy" src="./build/img/elements/persona_celu.png" alt="Persona en celular chateando" class="w-max h-auto">
                             </picture>
                             
                 
@@ -485,9 +503,8 @@
                     </div>
                 </div>
 
-                <div class="step flex flex-col gap-10 items-center w-screen mx-auto step my-10" data-step="9">
-
-                    <div class="mx-auto w-[95%] lg:w-[50%] mt-30 mb-10">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="9">
+                    <div class="mx-auto w-[95%] lg:w-[50%]">
                             <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] md:max-w-[48rem] leading-[1.2]">
                                 Los datos muestran un patrón consistente: hoy, la mayoría de las personas no 
                                 cuenta con los conocimientos, herramientas ni apoyos institucionales 
@@ -496,6 +513,9 @@
                                 una denuncia efectiva.
                             </p>
                     </div>
+                </div>
+
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
                     <div class="w-full h-full mx-auto flex flex-col gap-10 items-center justify-center p-5">                
                             <div class="relative">
                                 <div id="img-container-4" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
@@ -520,9 +540,9 @@
                     </div>
                 </div>
 
-                <div class="step flex flex-col gap-10 items-center w-screen mx-auto step my-10" data-step="10">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="10">
 
-                    <div class="relative mt-20">
+                    <div class="relative">
                         <div id="img-container-5" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
             
                         </div>
@@ -539,8 +559,11 @@
                         </div>
                             
                     </div>
+                </div>
+
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display ">
                     
-                    <div class="w-screen h-[80vh] flex items-center justify-center">
+                    <div class="w-screen flex items-center justify-center">
                         <div class="bg-[url(./build/img/bg-image/div4Bg.svg)] my-20 bg-cover bg-center w-screen  h-[294px] flex items-center justify-center relative">
                             <div class="mx-auto flex items-center justify-center bg-white p-1 md:p-5 w-[300px] h-[164px] md:w-[661px] border-l-[9px] border-[#FF0B53] absolute">
                                 <p class="text-[1.1rem] md:text-[1.5625rem] text-[#343434]">
@@ -556,7 +579,7 @@
 
                 </div>
 
-                <div class="step max-h-dvh" id="accordion-step" data-step="11">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="11">
 
                     <div class="flex flex-col gap-5 flex-start w-[95%] lg:w-[50%] mx-auto">
 
@@ -575,25 +598,29 @@
                         </div>
                         
                     </div>
+                </div>
 
-                    <div class="flex flex-col w-screen mt-5 h-[200vh] relative" id="accordion-wrapper">
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" id="accordion-step">
 
-                        <ul id="accordion" class="sticky top-[25vh]">
+                    <div class="flex flex-col w-screen h-[200vh] relative" id="accordion-wrapper">
+
+                        <ul id="accordion" class="sticky top-[15vh]">
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">
 
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
-                                        <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#1</span>
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[20%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-[#0E1AFB] py-0 items-center px-10">
+                                        <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem] text-white">#1</span>
                                         <p class="text-center w-full">
                                             Responsabilidad de las plataformas
                                         </p>
                                     </div>  
 
-                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out h-0 opacity-0 flex flex-col gap-10 justify-center w-[95%] md:w-[50%]">
+                                    <div class="accordion-content overflow-hidden transition-all duration-500 ease-out opacity-0 flex flex-col gap-10 justify-center w-[95%] md:w-[50%]"
+                                    style="height: fit-content;">
 
                                         <p class="mt-10 text-[1.2rem] md:text-[1.4375rem] text-left">Las empresas tecnológicas también son parte del problema -¡y de la solución!-.</p>
 
-                                        <div class="mt-10 flex flex-col lg:flex-row gap-5 justify-center items-center">
+                                        <div class="mt-10 flex flex-col lg:flex-row gap-5 lg:gap-20 justify-center items-center">
                                             <img loading="lazy" src="./build/img/icons/build.svg" class="h-[150px] w-[150px] md:h-[210px] md:w-[210px]" alt="">
 
                                             <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[20rem]">Un <span class="font-bold text-[1.875rem]">61,9%</span> 
@@ -610,7 +637,7 @@
 
                                 <div class="flex flex-col items-center justify-center">
 
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[40%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
                                         <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#2</span>
                                         <p class="text-center w-full">
                                             Concientización y educación
@@ -624,7 +651,7 @@
                                         <div class="flex flex-col lg:flex-row gap-15 items-center justify-center">
                                             <div class="flex flex-col lg:flex-row gap-5 items-center justify-center">
                                                 
-                                                <img loading="lazy" src="./build/img/icons/megaphone.svg" class="h-[80px] w-[80px] md:h-[154px] md:w-[154px]" alt="Ícono Megáfono">
+                                                <img loading="lazy" src="./build/img/icons/megaphone.svg" class="h-[80px] w-[80px] md:h-[104px] md:w-[104px]" alt="Ícono Megáfono">
 
                                                 <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[20rem]">Un <span class="font-bold text-[1.875rem]">65%</span> 
                                                 <span class="font-bold"> considera 
@@ -639,7 +666,7 @@
                                             
                                             <div class="flex flex-col lg:flex-row gap-5 justify-center items-center">
 
-                                                <img loading="lazy" src="./build/img/icons/pc.svg"  alt="Ícono PC" class="h-[100px] w-[110px] md:h-[174px] md:w-[174px]">
+                                                <img loading="lazy" src="./build/img/icons/pc.svg"  alt="Ícono PC" class="h-[100px] w-[110px] md:h-[104px] md:w-[104px]">
                                                 <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[20rem]">Un <span class="font-bold text-[1.875rem]">62%</span> 
                                                     <span class="font-bold"> demanda 
                                                         formación obligatoria en </span> 
@@ -659,7 +686,7 @@
                             </li>
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">                                    
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[50%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
+                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[60%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
                                         <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#3</span>
                                         <p class="text-center w-full">
                                             Fortalecimiento institucional y rol del Estado
@@ -670,7 +697,7 @@
                                         <p class="mt-10 text-[1.2rem] md:text-[1.4375rem] text-left">Las personas reclaman un Estado presente, con capacidad de respuesta.</p>
                                         <div class="flex flex-col lg:flex-row gap-10 justify-center items-center">
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
-                                                <img loading="lazy" src="./build/img/icons/justice.svg" class="h-[110px] w-[110px] md:h-[174px] w-[174px]"  alt="Ícono Justicia">
+                                                <img loading="lazy" src="./build/img/icons/justice.svg" class="h-[110px] w-[110px] md:h-[104px] w-[104px]"  alt="Ícono Justicia">
                                                 <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[20rem]">Un <span class="font-bold text-[1.875rem]">62,4%</span> señala la
                                                     <span class="font-bold"> 
                                                         necesidad de leyes, organismos 
@@ -679,7 +706,7 @@
                                                 </p>   
                                             </div>
                                             <div class="flex flex-col lg:flex-row items-center justify-center gap-5">
-                                                <img loading="lazy" src="build/img/icons/hands.svg" class="h-[110px] w-[110px] md:h-[174px] md:w-[174px]"  alt="Ícono Manos">
+                                                <img loading="lazy" src="build/img/icons/hands.svg" class="h-[110px] w-[110px] md:h-[104px] md:w-[104px]"  alt="Ícono Manos">
                                                 <p class="text-[#DA4771] text-[1.2rem] md:text-[1.4375rem] max-w-[20rem]">Un <span class="font-bold text-[1.875rem]">58,7%</span> 
                                                     subraya  
                                                     la importancia de contar con 
@@ -698,28 +725,33 @@
 
                     
                 </div>
+                <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display">
 
-                <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 mt-10 h-screen items-center justify-center leading-[1.2]" >
-                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
-                        Los datos son claros: la violencia de género digital desborda las capacidades 
-                        individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
-                    </p>
+                    <div class="mx-auto w-[95%] lg:w-[50%] flex flex-col gap-10 h-screen items-center justify-center leading-[1.2]" >
+                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
+                            Los datos son claros: la violencia de género digital desborda las capacidades 
+                            individuales. No alcanza con “cuidarse”, bloquear o dejar de publicar. 
+                        </p>
 
-                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
-                        Se trata de un problema estructural que requiere políticas públicas sostenidas, 
-                        educación en derechos digitales y plataformas que asuman un rol activo en la 
-                        prevención, la protección y la reparación del daño.
-                    </p>
+                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434]">
+                            Se trata de un problema estructural que requiere políticas públicas sostenidas, 
+                            educación en derechos digitales y plataformas que asuman un rol activo en la 
+                            prevención, la protección y la reparación del daño.
+                        </p>
 
-                    <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] font-bold">
-                        Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— 
-                        es el primer paso para romper los silencios digitales.
-                    </p>
-            
+                        <p class="text-[1.2rem] md:text-[1.4375rem] text-left text-[#343434] font-bold">
+                            Escuchar lo que dicen quienes viven esta violencia —y traducirlo en acción— 
+                            es el primer paso para romper los silencios digitales.
+                        </p>
+                
 
+                    </div>
                 </div>
                                 
             </article>
+        </section>
+
+        <section class="scroll-sections" id="scrolly-steps">
         </section>
     </main>
 </body>
@@ -824,6 +856,20 @@ function typeWriter(text, speed = 25) {
   typing();
 }
 
+// STEP
+const allSteps = d3.selectAll(".step-display");
+const nSteps = allSteps._groups[0].length + 2; // +2 para acordeon
+const intSteps = d3.range(0, nSteps);
+
+const steps = allSteps.data(intSteps);
+
+d3.select("#scrolly-steps")
+    .selectAll(".step")
+    .data(intSteps)
+        .join("div")
+        .attr("class", "step")
+        .attr("data-step", (_, i) => `${i}`)
+
 
 const scroller = scrollama();
 const navbarText = document.getElementById("navbar-text");
@@ -840,17 +886,17 @@ const navbarText = document.getElementById("navbar-text");
 // };
 
 const textRanges = [
-  { from: 3, to: 4, text: "Reconocer la violencia: lo que muestran los datos" },
-  { from: 5, to: 5, text: "Pasamos cada vez más tiempo en internet" },
-  { from: 6, to: 6, text: "Autocensura: habitar internet calculando riesgos" },
+  { from: 2, to: 6, text: "Reconocer la violencia: lo que muestran los datos" },
+  { from: 7, to: 8, text: "Pasamos cada vez más tiempo en internet" },
+  { from: 9, to: 11, text: "Autocensura: habitar internet calculando riesgos" },
 
   // 👇 rango intermedio que mantiene texto
-  { from: 7, to: 7, text: "La violencia digital tiene efectos reales" },
-  { from: 8, to:8, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
-  { from: 9, to: 10, text: "Mucha exposición, pocas herramientas" },
+  { from: 12, to: 13, text: "La violencia digital tiene efectos reales" },
+  { from: 14, to: 14, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
+  { from: 15, to: 18, text: "Mucha exposición, pocas herramientas" },
 
   // 👇 vuelve al inicial
-  { from: 11, to: 11, text: "Reconocer la violencia: lo que muestran los datos" }
+  { from: 19, to: 25, text: "Reconocer la violencia: lo que muestran los datos" }
 ];
 
 function getTextForStep(step) {
@@ -873,36 +919,37 @@ function openAccordion(activeIdx) {
             content.style.height = h + "px";
             content.style.opacity = "1";
         } else {
-            content.style.height = "0px";
+            content.style.height = "0";
             content.style.opacity = "0";
         }
     });
 }
 
+function getStepNumber(responseNumber) {
+    if (responseNumber > 22) {
+        return responseNumber - 2
+    } else if (responseNumber > 19) {
+        return 20
+    } else {
+        return responseNumber
+    }
+}
+
 scroller
   .setup({
     step: ".step",
-    offset: scrollerOffset,
-    progress: true
-  })
+    offset: scrollerOffset
+})
   .onStepEnter(response => {
 
-    const stepNumber = Number(response.element.dataset.step);
-    console.log(stepNumber)
+    const stepNumber = getStepNumber(Number(response.element.dataset.step));
 
-    // limpiar steps activos
-    document.querySelectorAll(".step").forEach(step => {
-      step.classList.remove("is-active");
-    });
-
-    // activar step actual
-    response.element.classList.add("is-active");
-
-    // actualizar navbar activo
-    updateNavbarActive(stepNumber);
+    allSteps.style("opacity", d => d === stepNumber ? 1 : 0)
+        .classed("active", d => d === stepNumber)
+        .classed("inactive", d => d !== stepNumber);
 
     // mostrar / ocultar navbar
-    if (stepNumber > 2) {
+    if (stepNumber > 1) {
       navbar.classList.remove("opacity-0", "pointer-events-none");
       navbar.classList.add("opacity-100");
     } else {
@@ -910,50 +957,31 @@ scroller
       navbar.classList.remove("opacity-100");
     }
 
+    // actualizar navbar activo
+    updateNavbarActive(stepNumber);
+
     const newText = getTextForStep(stepNumber);
 
     if (newText && navbarText.textContent !== newText) {
-    typeWriter(newText);
+        typeWriter(newText);
     }
 
-  })
-  .onStepProgress(response => {
-
-    const stepNumber = Number(response.element.dataset.step);
-    console.log('progres', stepNumber)
-
-    // Accordions
-    if (stepNumber === 9) {
-        const accordionItems = document.querySelectorAll(".accordion-item");
-        const gap = 0.1
-
-        const step9 = document.querySelector("#accordion-step").getBoundingClientRect().height;        
-        const threshold = scrollerOffset * window.innerHeight / step9;
-        const delta = (1 - threshold - gap) / 3;
-        let activeIdx = 0;
-
-        if (response.progress > threshold + 2 * delta) {
-            activeIdx = 2;
-        } else if (response.progress > threshold + delta) {
-            activeIdx = 1;
-        } else if (response.progress > threshold) {
-            activeIdx = 0;
-        }
-
-        openAccordion(activeIdx);
+    if (stepNumber === 20) {
+        const diff = Number(response.element.dataset.step) - stepNumber;
+        openAccordion(diff);
     }
+
   })
   .onStepExit(response => {
-    console.log(response)
     if (response.direction === "up") {
 
-        const prevStep = Number(response.element.dataset.step) - 1;
+        const prevStep = getStepNumber(Number(response.element.dataset.step)) - 1;
         updateNavbarActive(prevStep);
 
         const newText = getTextForStep(prevStep);
 
         if (newText && navbarText.textContent !== newText) {
-        typeWriter(newText);
+            typeWriter(newText);
         }
 
     }
@@ -964,12 +992,17 @@ scroller
 
 <script>
 
+function getIconForStep(step) {
+  const range = textRanges.findIndex(r => step >= r.from && step <= r.to);
+  return range !== -1 ? range : null;
+}
+
 const navItems = document.querySelectorAll(".nav-item");
 
-navItems.forEach(item => {
+navItems.forEach((item, idx) => {
   item.addEventListener("click", () => {
     const stepNumber = item.dataset.step;
-    const targetStep = document.querySelector(`.step[data-step="${stepNumber}"]`);
+    const targetStep = document.querySelector(`.step[data-step="${textRanges[idx].from}"]`);
 
     if (targetStep) {
       targetStep.scrollIntoView({
@@ -981,11 +1014,10 @@ navItems.forEach(item => {
 });
 
 function updateNavbarActive(stepNumber) {
-  navItems.forEach(item => {
+  navItems.forEach((item, idx) => {
     const icon = item.querySelector(".nav-icon");
-    const itemStep = Number(item.dataset.step);
 
-    if (itemStep === stepNumber) {
+    if (idx === getIconForStep(stepNumber)) {
       item.classList.add("bg-[#0E1AFB]", "scale-105");
       item.classList.remove("bg-white");
 
