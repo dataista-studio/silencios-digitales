@@ -152,38 +152,24 @@ function peopleAnimation({
     }
   }
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      const cells = container.querySelectorAll(".will-animate");
+  setTimeout(() => {
+
+    const cells = container.querySelectorAll(".will-animate");
   
-      if (entry.isIntersecting) {
-        // 👉 ENTRA al viewport (desde arriba o abajo)
-        cells.forEach(cell => {
-          const delay = Math.random() * 800 + 100;
+    cells.forEach(cell => {
   
-          setTimeout(() => {
-            cell.classList.remove("grayscale");
+      const delay = Math.random() * 800 + 100;
   
-            const overlay = cell.querySelector("div");
-            if (overlay) overlay.classList.add("opacity-100");
-          }, delay);
-        });
-      } else {
-        // 👉 SALE del viewport → reset
-        cells.forEach(cell => {
-          cell.classList.add("grayscale");
+      setTimeout(() => {
   
-          const overlay = cell.querySelector("div");
-          if (overlay) overlay.classList.remove("opacity-100");
-        });
-      }
-    },
-    {
-      threshold: 0.5
-    }
-  );
+        cell.classList.remove("grayscale");
   
-  observer.observe(container);
+        const overlay = cell.querySelector("div");
+        if (overlay) overlay.classList.add("opacity-100");
   
+      }, delay);
   
+    });
+  
+  }, 10)
 }
