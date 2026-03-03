@@ -458,7 +458,6 @@
                 </div>
 
                 <div class="flex flex-col gap-5 md:gap-10 items-center w-screen mx-auto step-display mt-5 mb-10" data-step="8">
-
                     <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-5 md:gap-10">
                         <p class="text-[1rem] md:text-[1.4375rem] text-left text-[#0E1AFB]">
                             La violencia digital trasciende las pantallas.
@@ -495,10 +494,7 @@
                                 <source srcset="./build/img/elements/persona_celu.webp" type="image/webp">
                                 <img loading="lazy" src="./build/img/elements/persona_celu.png" alt="Persona en celular chateando" class="w-auto h-[150px] md:w-max md:h-auto">
                             </picture>
-                            
-                
                         </div>
-                
                     </div>
                 </div>
 
@@ -520,6 +516,7 @@
                                 <div id="img-container-4" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
                     
                                 </div>
+
                                 <div class="absolute top-[12.5rem] left-[0.rem] md:top-[7rem] lg:top-[10.625rem] md:left-[0.05rem] lg:left-[1.25rem] max-w-[10rem] md:max-w-[13rem] lg:max-w-[16.125rem] p-2">
                                     <p class="text-[#FF0B53] text-[0.75rem] md:text-[1rem] lg:text-[1.4375rem]">
                                         Un <span class="text-[1.375rem] md:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">66%</span> afirma 
@@ -533,29 +530,28 @@
                                         reportar estas 
                                         situaciones
                                     </p>
-                                </div>
-                                    
+                                </div>  
                             </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-10 items-center w-screen mx-auto step-display" data-step="10">
                     <div class="w-full h-full mx-auto flex flex-col gap-10 items-center justify-center p-5"> 
-
-                    <div class="relative">
-                        <div id="img-container-5" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
-            
-                        </div>
-                        <div class="absolute top-[12.7rem] left-[0.3rem] md:top-[3.6rem] lg:top-[5rem] md:left-[13.5rem] lg:left-[18.125rem] max-w-[10rem] md:max-w-[18rem] lg:max-w-[20rem]">
-                            <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.2rem] lg:text-[1.4375rem]">
-                                Un <span class="text-[1.375rem] md:text-[1.7rem] lg:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">62%</span>
-                                <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
-                                no realizó 
-                                ninguna formación o 
-                                capacitación
-                                </span> en seguridad 
-                                digital en los últimos cinco años
-                            </p>
+                        <div class="relative">
+                            <div id="img-container-5" class="grid w-[95vw] h-[400px] md:w-max md:h-max grid-cols-10 grid-rows-10 gap-2">
+                
+                            </div>
+                            <div class="absolute top-[12.7rem] left-[0.3rem] md:top-[3.6rem] lg:top-[5rem] md:left-[13.5rem] lg:left-[18.125rem] max-w-[10rem] md:max-w-[18rem] lg:max-w-[20rem]">
+                                <p class="text-[#FF0B53] text-[0.75rem] md:text-[1.2rem] lg:text-[1.4375rem]">
+                                    Un <span class="text-[1.375rem] md:text-[1.7rem] lg:text-[2.5rem] font-bold w-[5.375rem] h-[4.125rem] text-white bg-[#FF0B53]">62%</span>
+                                    <span class="font-bold underline decoration-[#00F0E9] decoration-[4px]">
+                                    no realizó 
+                                    ninguna formación o 
+                                    capacitación
+                                    </span> en seguridad 
+                                    digital en los últimos cinco años
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -859,7 +855,7 @@ scroller
 
     const stepNumber = getStepNumber(Number(response.element.dataset.step));
 
-    console.log(stepNumber)
+    console.log(`step real: ${Number(response.element.dataset.step)} step modificado:${stepNumber}`)
     allSteps.style("opacity", d => d === stepNumber ? 1 : 0)
         .classed("active", d => d === stepNumber)
         .classed("inactive", d => d !== stepNumber);
@@ -873,7 +869,7 @@ scroller
       navbar.classList.remove("opacity-100");
     }
 
-    if (stepNumber === 4 ){
+    if (stepNumber === 3 ){
         peopleAnimation({
         containerId: "img-container-2",
         imgPath: "./build/img/people",
@@ -894,7 +890,7 @@ scroller
     });
     }
 
-    if (stepNumber === 6){
+    if (stepNumber === 5){
         peopleAnimation({
         containerId: "img-container-1",
         ratio: 0.4,
@@ -907,7 +903,7 @@ scroller
         });
     }
 
-    if (stepNumber === 11){
+    if (stepNumber === 10){
         peopleAnimation({
         containerId: "img-container-3",
         imgPath: "./build/img/people",
@@ -922,7 +918,7 @@ scroller
         });
     }
 
-    if (stepNumber === 17) {
+    if (stepNumber === 16) {
         peopleAnimation({
         containerId: "img-container-4",
         imgPath: "./build/img/people",
@@ -936,7 +932,7 @@ scroller
         });
     }
 
-    if (stepNumber === 18) {
+    if (stepNumber === 17) {
         peopleAnimation({
         containerId: "img-container-5",
         imgPath: "./build/img/people",
@@ -962,7 +958,7 @@ scroller
         typeWriter(newText);
     }
 
-    if (stepNumber === 21) {
+    if (stepNumber === 20) {
         const diff = Number(response.element.dataset.step) - stepNumber;
         openAccordion(diff);
     }
@@ -1059,6 +1055,6 @@ function updateNavbarActive(stepNumber) {
         document.body.classList.remove("loading");
       }, 500);
     });
-  </script>
+</script>
 
 </html>
