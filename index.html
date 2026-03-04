@@ -508,7 +508,11 @@
                                 miedo, asco, angustia, bronca y malestar persistente.
                             </p>
                         </div>
-                
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:gap-10 items-center w-screen mx-auto step-display" data-step="7">
+                    <div class="flex flex-col md:gap-20 flex-start w-[95%] lg:w-[50%] mx-auto leading-[1.2]">
                         <div class="flex flex-col lg:flex-row gap-5 md:gap-12 items-center">
                             <picture>
                                 <source srcset="./build/img/elements/mujerestrés.avif" type="image/avif">
@@ -564,6 +568,12 @@
                             
                         </div>
                 
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-5 md:gap-10 items-center w-screen mx-auto step-display mt-5 mb-10" data-step="8">
+                    <div class="flex flex-col justify-center w-[95%] md:w-[50%] gap-5 md:gap-10">
+                    
                         <div class="flex flex-col lg:flex-row gap-5 md:gap-10 items-center md:mt-10">
                             <p class="text-[1rem] md:text-[1.4375rem] text-center md:text-left text-[#343434] md:max-w-[35rem] leading-[1.2]">
                                 Los efectos alcanzan también la vida social, laboral y material. 
@@ -882,17 +892,16 @@ const scroller = scrollama();
 const navbarText = document.getElementById("navbar-text");
 
 const textRanges = [
-  { from: 4, to: 8, text: "Reconocer la violencia: lo que muestran los datos" },
-  { from: 9, to: 10, text: "Pasamos cada vez más tiempo en internet" },
-  { from: 11, to: 13, text: "Autocensura: habitar internet calculando riesgos" },
+  { from: 3, to: 7, text: "Reconocer la violencia: lo que muestran los datos" },
+  { from: 8, to: 9, text: "Pasamos cada vez más tiempo en internet" },
+  { from: 10, to: 12, text: "Autocensura: habitar internet calculando riesgos" },
 
-  // 👇 rango intermedio que mantiene texto
-  { from: 14, to: 15, text: "La violencia digital tiene efectos reales" },
-  { from: 16, to: 16, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
-  { from: 17, to: 20, text: "Mucha exposición, pocas herramientas" },
+  { from: 13, to: 15, text: "La violencia digital tiene efectos reales" },
+  { from: 16, to: 17, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
+  { from: 18, to: 21, text: "Mucha exposición, pocas herramientas" },
 
   // 👇 vuelve al inicial
-  { from: 21, to: 27, text: "Reconocer la violencia: lo que muestran los datos" }
+  { from: 22, to: 26, text: "Reconocer la violencia: lo que muestran los datos" }
 ];
 
 function getTextForStep(step) {
@@ -922,10 +931,10 @@ function openAccordion(activeIdx) {
 }
 
 function getStepNumber(responseNumber) {
-    if (responseNumber > 23) {
+    if (responseNumber > 25) {
         return responseNumber - 2
-    } else if (responseNumber > 20) {
-        return 21
+    } else if (responseNumber > 22) {
+        return 23
     } else {
         return responseNumber
     }
@@ -946,7 +955,7 @@ scroller
         .classed("inactive", d => d !== stepNumber);
 
     // mostrar / ocultar navbar
-    if (stepNumber > 3) {
+    if (stepNumber > 2) {
       navbar.classList.remove("opacity-0", "pointer-events-none");
       navbar.classList.add("opacity-100");
     } else {
@@ -1003,7 +1012,7 @@ scroller
         });
     }
 
-    if (stepNumber === 17) {
+    if (stepNumber === 19) {
         peopleAnimation({
         containerId: "img-container-4",
         imgPath: "./build/img/people",
@@ -1017,7 +1026,7 @@ scroller
         });
     }
 
-    if (stepNumber === 18) {
+    if (stepNumber === 20) {
         peopleAnimation({
         containerId: "img-container-5",
         imgPath: "./build/img/people",
@@ -1042,7 +1051,7 @@ scroller
         typeWriter(newText);
     }
 
-    if (stepNumber === 21) {
+    if (stepNumber === 23) {
         const diff = Number(response.element.dataset.step) - stepNumber;
         openAccordion(diff);
     }
