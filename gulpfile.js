@@ -31,7 +31,7 @@ function processImage(file, outputSubDir){
     const outputFileGif = path.join(outputSubDir, `${baseName}.gif`)
 
 
-    const options = { quality: 80}
+    const options = { quality: 50}
     if (extName === ".png"){
         sharp(file).png(options).toFile(outputFile)
     } else if (extName === ".svg"){
