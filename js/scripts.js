@@ -91,14 +91,14 @@ function peopleAnimation({
       const cell = document.createElement("div");
 
       if (whiteCells.has(`${r}-${c}`)) {
-        cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:w-[5.375rem] lg:h-[4rem] ${whiteClass}`;
+        cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:w-[5.375rem] lg:h-[3.8rem] ${whiteClass}`;
         container.appendChild(cell);
         continue;
       }
 
       const type = cellMap.get(`${r}-${c}`);
 
-      cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:w-[5.375rem] lg:h-[4rem] ${
+      cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:w-[5.375rem] lg:h-[3.8rem] ${
         type === "yellow" ? yellowClass : ""
       }`;
 
