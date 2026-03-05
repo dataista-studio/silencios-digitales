@@ -91,7 +91,7 @@ function peopleAnimation({
       const cell = document.createElement("div");
 
       if (whiteCells.has(`${r}-${c}`)) {
-        cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:h-[76.8px] lg:h-[60px] ${whiteClass}`;
+        cell.className = `w-full h-full md:w-[4rem] md:h-[3.12rem] lg:w-[3.87rem] lg:h-[3rem] ${whiteClass}`;
         container.appendChild(cell);
         continue;
       }
