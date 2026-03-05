@@ -199,11 +199,12 @@
 
                         </div>
                         
-                        <div class="overflow-hidden">
-
-                            <img loading="lazy" src="./build/img/elements/chat.svg" class="h-[132px] w-max" id="chat-img" alt="chat">
-                        </div>
-
+                    </div>
+                </div>
+                
+                <div class="flex w-screen step-display">
+                    <div class="overflow-hidden w-[95%] lg:w-[50%]">
+                        <img loading="lazy" src="./build/img/elements/chat.svg" class="h-[132px] w-max lg:h-[150px]" id="chat-img" alt="chat">
                     </div>
                 </div>
 
@@ -892,15 +893,15 @@ const scroller = scrollama();
 const navbarText = document.getElementById("navbar-text");
 
 const textRanges = [
-  { from: 3, to: 7, text: "Reconocer la violencia: lo que muestran los datos" },
-  { from: 8, to: 9, text: "Pasamos cada vez más tiempo en internet" },
-  { from: 10, to: 12, text: "Autocensura: habitar internet calculando riesgos" },
+  { from: 3, to: 8, text: "Reconocer la violencia: lo que muestran los datos" },
+  { from: 9, to: 10, text: "Pasamos cada vez más tiempo en internet" },
+  { from: 11, to: 13, text: "Autocensura: habitar internet calculando riesgos" },
 
-  { from: 13, to: 15, text: "La violencia digital tiene efectos reales" },
-  { from: 16, to: 17, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
-  { from: 18, to: 21, text: "Mucha exposición, pocas herramientas" },
+  { from: 14, to: 16, text: "La violencia digital tiene efectos reales" },
+  { from: 17, to: 18, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
+  { from: 19, to: 22, text: "Mucha exposición, pocas herramientas" },
 
-  { from: 22, to: 26, text: "Reconocer la violencia: lo que muestran los datos" }
+  { from: 23, to: 27, text: "Reconocer la violencia: lo que muestran los datos" }
 ];
 
 function getTextForStep(step) {
@@ -915,6 +916,7 @@ function openAccordion(activeIdx) {
     accordionItems.forEach((item, idx) => {
         const content = item.querySelector(".accordion-content");
         const header = item.querySelector(".accordion-header");
+        const number = header.querySelector("span");
 
         if (!content || !header) return;
 
@@ -924,23 +926,32 @@ function openAccordion(activeIdx) {
             const h = content.scrollHeight;
             content.style.height = h + "px";
             content.style.opacity = "1";
+
             header.classList.remove("text-white");
-            header.classList.add("text-[#0E1AFB]/[60%]");
+            header.classList.add("text-[#00F0E9]");
+
+            number.classList.remove("text-white");
+            number.classList.add("text-[#00F0E9]");
+
 
         } else {
             content.style.height = "0";
             content.style.opacity = "0";
-            header.classList.remove("text-[#0E1AFB]/[60%]");
+
+            header.classList.remove("text-[#00F0E9]");
             header.classList.add("text-white");
+
+            number.classList.remove("text-[#00F0E9]");
+            number.classList.add("text-white");
         }
     });
 }
 
 function getStepNumber(responseNumber) {
-    if (responseNumber > 25) {
+    if (responseNumber > 26) {
         return responseNumber - 2
-    } else if (responseNumber > 22) {
-        return 23
+    } else if (responseNumber > 23) {
+        return 24
     } else {
         return responseNumber
     }
@@ -969,7 +980,7 @@ scroller
       navbar.classList.remove("opacity-100");
     }
 
-    if (stepNumber === 4 ){
+    if (stepNumber === 5 ){
         peopleAnimation({
         containerId: "img-container-2",
         imgPath: "./build/img/people",
@@ -990,7 +1001,7 @@ scroller
     });
     }
 
-    if (stepNumber === 6){
+    if (stepNumber === 7){
         peopleAnimation({
         containerId: "img-container-1",
         ratio: 0.4,
@@ -1003,7 +1014,7 @@ scroller
         });
     }
 
-    if (stepNumber === 11){
+    if (stepNumber === 12){
         peopleAnimation({
         containerId: "img-container-3",
         imgPath: "./build/img/people",
@@ -1018,7 +1029,7 @@ scroller
         });
     }
 
-    if (stepNumber === 19) {
+    if (stepNumber === 20) {
         peopleAnimation({
         containerId: "img-container-4",
         imgPath: "./build/img/people",
@@ -1032,7 +1043,7 @@ scroller
         });
     }
 
-    if (stepNumber === 20) {
+    if (stepNumber === 21) {
         peopleAnimation({
         containerId: "img-container-5",
         imgPath: "./build/img/people",
@@ -1057,7 +1068,7 @@ scroller
         typeWriter(newText);
     }
 
-    if (stepNumber === 23) {
+    if (stepNumber === 24) {
         const diff = Number(response.element.dataset.step) - stepNumber;
         openAccordion(diff);
     }
