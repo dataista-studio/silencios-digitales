@@ -698,8 +698,8 @@
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">
 
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[20%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-[#0E1AFB] py-0 items-center px-10">
-                                        <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem] text-white">#1</span>
+                                    <div class="accordion-header transition-colors duration-300 ease-in-out h-[58px] w-full bg-[#0E1AFB]/[20%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
+                                        <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#1</span>
                                         <p class="text-center w-full">
                                             Responsabilidad de las plataformas
                                         </p>
@@ -727,7 +727,7 @@
 
                                 <div class="flex flex-col items-center justify-center">
 
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[40%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
+                                    <div class="accordion-header transition-colors duration-300 ease-in-out h-[58px] w-full bg-[#0E1AFB]/[40%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
                                         <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#2</span>
                                         <p class="text-center w-full">
                                             Concientización y educación
@@ -776,7 +776,7 @@
                             </li>
                             <li class="accordion-item">
                                 <div class="flex flex-col items-center justify-center">                                    
-                                    <div class="accordion-header h-[58px] w-full bg-[#0E1AFB]/[60%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
+                                    <div class="accordion-header transition-colors duration-300 ease-in-out h-[58px] w-full bg-[#0E1AFB]/[60%] flex text-[1.1rem] lg:text-[1.875rem] font-bold text-white py-0 items-center px-10">
                                         <span class="bg-[#0E1AFB] inline-flex items-center justify-center h-full w-[5rem]">#3</span>
                                         <p class="text-center w-full">
                                             Fortalecimiento institucional y rol del Estado
@@ -900,7 +900,6 @@ const textRanges = [
   { from: 16, to: 17, text: "Cuando lo digital impacta en el cuerpo y en la vida cotidiana"},
   { from: 18, to: 21, text: "Mucha exposición, pocas herramientas" },
 
-  // 👇 vuelve al inicial
   { from: 22, to: 26, text: "Reconocer la violencia: lo que muestran los datos" }
 ];
 
@@ -915,7 +914,9 @@ const accordionItems = document.querySelectorAll(".accordion-item");
 function openAccordion(activeIdx) {
     accordionItems.forEach((item, idx) => {
         const content = item.querySelector(".accordion-content");
-        if (!content) return;
+        const header = item.querySelector(".accordion-header");
+
+        if (!content || !header) return;
 
         if (idx === activeIdx) {
             // reset primero para recalcular bien
@@ -923,9 +924,14 @@ function openAccordion(activeIdx) {
             const h = content.scrollHeight;
             content.style.height = h + "px";
             content.style.opacity = "1";
+            header.classList.remove("text-white");
+            header.classList.add("text-[#0E1AFB]/[60%]");
+
         } else {
             content.style.height = "0";
             content.style.opacity = "0";
+            header.classList.remove("text-[#0E1AFB]/[60%]");
+            header.classList.add("text-white");
         }
     });
 }
