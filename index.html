@@ -319,7 +319,7 @@
                     <picture class="absolute top-[68.5vh] right-[7vw]">
                         <source srcset="./build/img/elements/icons_2_mobile.avif" type="image/avif">
                         <source srcset="./build/img/elements/icons_2_mobile.webp" type="image/webp">
-                        <img loading="lazy" src="./build/img/elements/icons_2_mobile.png" alt="Íconos redes sociales" class="h-[85px] w-[85px] md:w-0 md:h-0 bg-cover">
+                        <img loading="lazy" src="./build/img/elements/icons_2_mobile.png" alt="Íconos redes sociales" class="h-[85px] w-[96.29px] md:w-0 md:h-0 bg-cover">
                     </picture>
                     
                     <picture class="absolute left-[75vw] ">
@@ -918,6 +918,7 @@ function openAccordion(activeIdx) {
         const header = item.querySelector(".accordion-header");
         const number = header.querySelector("span");
 
+
         if (!content || !header) return;
 
         if (idx === activeIdx) {
@@ -928,20 +929,18 @@ function openAccordion(activeIdx) {
             content.style.opacity = "1";
 
             header.classList.remove("text-white");
-            header.classList.add("text-[#00F0E9]");
+            header.classList.add("text-[#0E1AFB]");
 
-            number.classList.remove("text-white");
-            number.classList.add("text-[#00F0E9]");
+            number.classList.add("text-white");
 
 
         } else {
             content.style.height = "0";
             content.style.opacity = "0";
 
-            header.classList.remove("text-[#00F0E9]");
+            header.classList.remove("text-[#0E1AFB]");
             header.classList.add("text-white");
 
-            number.classList.remove("text-[#00F0E9]");
             number.classList.add("text-white");
         }
     });
